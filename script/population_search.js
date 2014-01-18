@@ -8,12 +8,14 @@ var population_search = function(keyword){
 
 };
 
+window.search_results_template = Handlebars.compile($('#search-result-template').html());
+
 var show_search_results = function(keyword, results_view){
   var communities = population_search(keyword);
   results_view.empty();
 
   _.each(communities, function(community){
-    results_view.append("<p>" + community + "</p>");
+    results_view.append(window.search_results_template({community: community}) );
   });
 };
 
