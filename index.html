@@ -13,9 +13,18 @@
 
     <div id="search-results"></div>
 
+    <div id="community-population"></div>
+
 
     <script id="search-result-template" type="text/x-handlebars-template">
-      <p>{{community}}</p>
+      <p><a href="javascript:void(0)" data-community="{{community}}" class="community-link">{{community}}</a></p>
+    </script>
+
+    <script id="population-template" type="text/x-handlebars-template">
+      <h2>{{community}}</h2>
+      {{#each yearly_data}}
+        <p>{{year}}: {{population}}</p>
+      {{/each}}
     </script>
 
     <script type="text/javascript" src="script/underscore-min.js"></script>
@@ -28,6 +37,7 @@
     <script type="text/javascript">
       $(function(){
         $('#search-form').on('submit', search);
+        $(document.body).on('click', '.community-link', show_community);
       });
     </script>
   </body>
