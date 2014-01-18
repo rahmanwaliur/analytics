@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Calgary Community InfoGrapic Portal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+
+    <form id='search-form'>
+      <p><input id="search" type="search" placeholder="Search for a Community" size="100"></p>
+      <p><button type="submit">Go</button></p>
+    </form>
+
+    <div id="search-results"></div>
+
+    <script type="text/javascript" src="script/underscore-min.js"></script>
+    <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript" src="data/population.js"></script>
+    <script type="text/javascript" src="script/population_search.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('#search-form').on('submit', search);
+      });
+    </script>
+  </body>
+</html>

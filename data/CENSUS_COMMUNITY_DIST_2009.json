@@ -1,0 +1,1162 @@
+[
+  {
+    "community": "RENFREW",
+    "population": "5698"
+  },
+  {
+    "community": "EVERGREEN",
+    "population": "18148"
+  },
+  {
+    "community": "LEGACY",
+    "population": "16"
+  },
+  {
+    "community": "SOUTH CALGARY",
+    "population": "3641"
+  },
+  {
+    "community": "GLENDALE",
+    "population": "2794"
+  },
+  {
+    "community": "CITADEL",
+    "population": "10212"
+  },
+  {
+    "community": "HAWKWOOD",
+    "population": "10202"
+  },
+  {
+    "community": "SIGNAL HILL",
+    "population": "13912"
+  },
+  {
+    "community": "SANDSTONE VALLEY",
+    "population": "6476"
+  },
+  {
+    "community": "PARKHILL",
+    "population": "1561"
+  },
+  {
+    "community": "WEST HILLHURST",
+    "population": "5656"
+  },
+  {
+    "community": "BEL-AIRE",
+    "population": "430"
+  },
+  {
+    "community": "ELBOYA",
+    "population": "1698"
+  },
+  {
+    "community": "DOUGLASDALE/GLEN",
+    "population": "11749"
+  },
+  {
+    "community": "MANCHESTER",
+    "population": "611"
+  },
+  {
+    "community": "CFB - LINCOLN PARK PMQ",
+    "population": "1376"
+  },
+  {
+    "community": "BOWNESS",
+    "population": "10945"
+  },
+  {
+    "community": "WHITEHORN",
+    "population": "11807"
+  },
+  {
+    "community": "BONAVISTA DOWNS",
+    "population": "975"
+  },
+  {
+    "community": "SCENIC ACRES",
+    "population": "9072"
+  },
+  {
+    "community": "RUTLAND PARK",
+    "population": "2301"
+  },
+  {
+    "community": "NEW BRIGHTON",
+    "population": "5142"
+  },
+  {
+    "community": "SUNALTA",
+    "population": "3361"
+  },
+  {
+    "community": "PUMP HILL",
+    "population": "1619"
+  },
+  {
+    "community": "KINCORA",
+    "population": "3385"
+  },
+  {
+    "community": "LAKEVIEW",
+    "population": "5467"
+  },
+  {
+    "community": "ROCKY RIDGE",
+    "population": "6882"
+  },
+  {
+    "community": "TUSCANY",
+    "population": "18272"
+  },
+  {
+    "community": "PARKDALE",
+    "population": "2247"
+  },
+  {
+    "community": "ALBERT PARK/RADISSON HEIGHTS",
+    "population": "6047"
+  },
+  {
+    "community": "ACADIA",
+    "population": "10574"
+  },
+  {
+    "community": "HAMPTONS",
+    "population": "8086"
+  },
+  {
+    "community": "RIDEAU PARK",
+    "population": "641"
+  },
+  {
+    "community": "LINCOLN PARK",
+    "population": "2612"
+  },
+  {
+    "community": "SAGE HILL",
+    "population": "267"
+  },
+  {
+    "community": "ROXBORO",
+    "population": "428"
+  },
+  {
+    "community": "FALCONRIDGE",
+    "population": "10130"
+  },
+  {
+    "community": "TARADALE",
+    "population": "14515"
+  },
+  {
+    "community": "EVANSTON",
+    "population": "4599"
+  },
+  {
+    "community": "QUEENSLAND",
+    "population": "4962"
+  },
+  {
+    "community": "MCKENZIE LAKE",
+    "population": "14533"
+  },
+  {
+    "community": "HOUNSFIELD HEIGHTS/BRIAR HILL",
+    "population": "2940"
+  },
+  {
+    "community": "SHAWNEE SLOPES",
+    "population": "1510"
+  },
+  {
+    "community": "SUNDANCE",
+    "population": "10969"
+  },
+  {
+    "community": "CRANSTON",
+    "population": "9140"
+  },
+  {
+    "community": "MCKENZIE TOWNE",
+    "population": "14068"
+  },
+  {
+    "community": "FISH CREEK PARK",
+    "population": "0"
+  },
+  {
+    "community": "SILVERADO",
+    "population": "2620"
+  },
+  {
+    "community": "SOMERSET",
+    "population": "8486"
+  },
+  {
+    "community": "COUNTRY HILLS",
+    "population": "3684"
+  },
+  {
+    "community": "RANCHLANDS",
+    "population": "7654"
+  },
+  {
+    "community": "MACEWAN GLEN",
+    "population": "5233"
+  },
+  {
+    "community": "CAMBRIAN HEIGHTS",
+    "population": "2080"
+  },
+  {
+    "community": "MARLBOROUGH PARK",
+    "population": "8554"
+  },
+  {
+    "community": "CRESTMONT",
+    "population": "1382"
+  },
+  {
+    "community": "UNIVERSITY OF CALGARY",
+    "population": "2137"
+  },
+  {
+    "community": "COLLINGWOOD",
+    "population": "2281"
+  },
+  {
+    "community": "MOUNT PLEASANT",
+    "population": "4762"
+  },
+  {
+    "community": "SCARBORO/ SUNALTA WEST",
+    "population": "372"
+  },
+  {
+    "community": "RED CARPET",
+    "population": "1657"
+  },
+  {
+    "community": "CANYON MEADOWS",
+    "population": "7985"
+  },
+  {
+    "community": "HIGHLAND PARK",
+    "population": "3579"
+  },
+  {
+    "community": "MAPLE RIDGE",
+    "population": "2006"
+  },
+  {
+    "community": "ABBEYDALE",
+    "population": "6032"
+  },
+  {
+    "community": "CHINOOK PARK",
+    "population": "1725"
+  },
+  {
+    "community": "DALHOUSIE",
+    "population": "9104"
+  },
+  {
+    "community": "RUNDLE",
+    "population": "11252"
+  },
+  {
+    "community": "CFB - CURRIE",
+    "population": "0"
+  },
+  {
+    "community": "MEADOWLARK PARK",
+    "population": "530"
+  },
+  {
+    "community": "BRIDLEWOOD",
+    "population": "10989"
+  },
+  {
+    "community": "HUNTINGTON HILLS",
+    "population": "13594"
+  },
+  {
+    "community": "UNIVERSITY HEIGHTS",
+    "population": "2972"
+  },
+  {
+    "community": "MONTGOMERY",
+    "population": "3795"
+  },
+  {
+    "community": "OGDEN",
+    "population": "8692"
+  },
+  {
+    "community": "KELVIN GROVE",
+    "population": "2277"
+  },
+  {
+    "community": "FOREST LAWN",
+    "population": "7676"
+  },
+  {
+    "community": "MARTINDALE",
+    "population": "12406"
+  },
+  {
+    "community": "HARVEST HILLS",
+    "population": "7434"
+  },
+  {
+    "community": "BRENTWOOD",
+    "population": "6066"
+  },
+  {
+    "community": "PALLISER",
+    "population": "3220"
+  },
+  {
+    "community": "BRITANNIA",
+    "population": "736"
+  },
+  {
+    "community": "WOODBINE",
+    "population": "9557"
+  },
+  {
+    "community": "VARSITY",
+    "population": "12158"
+  },
+  {
+    "community": "SETON",
+    "population": "0"
+  },
+  {
+    "community": "AUBURN BAY",
+    "population": "3466"
+  },
+  {
+    "community": "NORTH HAVEN UPPER",
+    "population": "650"
+  },
+  {
+    "community": "WINDSOR PARK",
+    "population": "3916"
+  },
+  {
+    "community": "MAYLAND HEIGHTS",
+    "population": "5931"
+  },
+  {
+    "community": "CHARLESWOOD",
+    "population": "3514"
+  },
+  {
+    "community": "ALTADORE",
+    "population": "8723"
+  },
+  {
+    "community": "QUEENS PARK VILLAGE",
+    "population": "386"
+  },
+  {
+    "community": "ERIN WOODS",
+    "population": "6972"
+  },
+  {
+    "community": "COUNTRY HILLS VILLAGE",
+    "population": "2211"
+  },
+  {
+    "community": "PINERIDGE",
+    "population": "9808"
+  },
+  {
+    "community": "VISTA HEIGHTS",
+    "population": "2220"
+  },
+  {
+    "community": "CEDARBRAE",
+    "population": "6366"
+  },
+  {
+    "community": "GREENWOOD/GREENBRIAR",
+    "population": "935"
+  },
+  {
+    "community": "BRIDGELAND/RIVERSIDE",
+    "population": "5150"
+  },
+  {
+    "community": "NOLAN HILL",
+    "population": "0"
+  },
+  {
+    "community": "PENBROOKE MEADOWS",
+    "population": "8199"
+  },
+  {
+    "community": "GREENVIEW",
+    "population": "2004"
+  },
+  {
+    "community": "CAPITOL HILL",
+    "population": "4178"
+  },
+  {
+    "community": "HIGHWOOD",
+    "population": "2165"
+  },
+  {
+    "community": "SOUTH AIRWAYS",
+    "population": "0"
+  },
+  {
+    "community": "09E",
+    "population": "0"
+  },
+  {
+    "community": "09H",
+    "population": "0"
+  },
+  {
+    "community": "02K",
+    "population": "70"
+  },
+  {
+    "community": "12H",
+    "population": "0"
+  },
+  {
+    "community": "13F",
+    "population": "22"
+  },
+  {
+    "community": "13I",
+    "population": "19"
+  },
+  {
+    "community": "BELTLINE",
+    "population": "18341"
+  },
+  {
+    "community": "01I",
+    "population": "0"
+  },
+  {
+    "community": "05C",
+    "population": "15"
+  },
+  {
+    "community": "09P",
+    "population": "161"
+  },
+  {
+    "community": "13E",
+    "population": "0"
+  },
+  {
+    "community": "13A",
+    "population": "0"
+  },
+  {
+    "community": "05B",
+    "population": "16"
+  },
+  {
+    "community": "FAIRVIEW",
+    "population": "3598"
+  },
+  {
+    "community": "UPPER MOUNT ROYAL",
+    "population": "2552"
+  },
+  {
+    "community": "EDGEMONT",
+    "population": "16534"
+  },
+  {
+    "community": "KILLARNEY/GLENGARRY",
+    "population": "6635"
+  },
+  {
+    "community": "DISCOVERY RIDGE",
+    "population": "4286"
+  },
+  {
+    "community": "SOUTHVIEW",
+    "population": "2079"
+  },
+  {
+    "community": "ROYAL OAK",
+    "population": "10423"
+  },
+  {
+    "community": "APPLEWOOD PARK",
+    "population": "6379"
+  },
+  {
+    "community": "ERLTON",
+    "population": "1212"
+  },
+  {
+    "community": "CHAPARRAL",
+    "population": "10537"
+  },
+  {
+    "community": "SHERWOOD",
+    "population": "1553"
+  },
+  {
+    "community": "LOWER MOUNT ROYAL",
+    "population": "3222"
+  },
+  {
+    "community": "VALLEY RIDGE",
+    "population": "4979"
+  },
+  {
+    "community": "WILLOW PARK",
+    "population": "5296"
+  },
+  {
+    "community": "DEER RUN",
+    "population": "5520"
+  },
+  {
+    "community": "ROSEMONT",
+    "population": "1235"
+  },
+  {
+    "community": "SADDLE RIDGE",
+    "population": "12255"
+  },
+  {
+    "community": "BAYVIEW",
+    "population": "647"
+  },
+  {
+    "community": "SCARBORO",
+    "population": "874"
+  },
+  {
+    "community": "NORTH GLENMORE PARK",
+    "population": "2413"
+  },
+  {
+    "community": "POINT MCKAY",
+    "population": "1324"
+  },
+  {
+    "community": "AURORA BUSINESS PARK",
+    "population": "0"
+  },
+  {
+    "community": "NOSE HILL PARK",
+    "population": "0"
+  },
+  {
+    "community": "09D",
+    "population": "0"
+  },
+  {
+    "community": "02F",
+    "population": "0"
+  },
+  {
+    "community": "01B",
+    "population": "0"
+  },
+  {
+    "community": "06A",
+    "population": "34"
+  },
+  {
+    "community": "03S",
+    "population": "0"
+  },
+  {
+    "community": "FRANKLIN",
+    "population": "0"
+  },
+  {
+    "community": "10A",
+    "population": "639"
+  },
+  {
+    "community": "01H",
+    "population": "0"
+  },
+  {
+    "community": "RAMSAY",
+    "population": "1950"
+  },
+  {
+    "community": "FAIRVIEW INDUSTRIAL",
+    "population": "0"
+  },
+  {
+    "community": "SPRUCE CLIFF",
+    "population": "3518"
+  },
+  {
+    "community": "RIVERBEND",
+    "population": "10081"
+  },
+  {
+    "community": "WINSTON HEIGHTS/MOUNTVIEW",
+    "population": "3632"
+  },
+  {
+    "community": "ELBOW PARK",
+    "population": "3417"
+  },
+  {
+    "community": "OAKRIDGE",
+    "population": "5823"
+  },
+  {
+    "community": "MAYFAIR",
+    "population": "430"
+  },
+  {
+    "community": "CORAL SPRINGS",
+    "population": "6009"
+  },
+  {
+    "community": "EAU CLAIRE",
+    "population": "1716"
+  },
+  {
+    "community": "03D",
+    "population": "0"
+  },
+  {
+    "community": "SUNNYSIDE",
+    "population": "3675"
+  },
+  {
+    "community": "WALDEN",
+    "population": "0"
+  },
+  {
+    "community": "THORNCLIFFE",
+    "population": "8792"
+  },
+  {
+    "community": "13B",
+    "population": "0"
+  },
+  {
+    "community": "01E",
+    "population": "0"
+  },
+  {
+    "community": "02A",
+    "population": "33"
+  },
+  {
+    "community": "HILLHURST",
+    "population": "6074"
+  },
+  {
+    "community": "EAGLE RIDGE",
+    "population": "256"
+  },
+  {
+    "community": "ARBOUR LAKE",
+    "population": "10727"
+  },
+  {
+    "community": "NORTH HAVEN",
+    "population": "2323"
+  },
+  {
+    "community": "DOWNTOWN WEST END",
+    "population": "2288"
+  },
+  {
+    "community": "ROSSCARROCK",
+    "population": "3213"
+  },
+  {
+    "community": "MAHOGANY",
+    "population": "11"
+  },
+  {
+    "community": "DEER RIDGE",
+    "population": "3954"
+  },
+  {
+    "community": "GLENBROOK",
+    "population": "6913"
+  },
+  {
+    "community": "WOODLANDS",
+    "population": "6354"
+  },
+  {
+    "community": "CLIFF BUNGALOW",
+    "population": "1763"
+  },
+  {
+    "community": "ST. ANDREWS HEIGHTS",
+    "population": "1571"
+  },
+  {
+    "community": "12I",
+    "population": "0"
+  },
+  {
+    "community": "SKYVIEW RANCH",
+    "population": "26"
+  },
+  {
+    "community": "WESTGATE",
+    "population": "3160"
+  },
+  {
+    "community": "CALGARY INTERNATIONAL AIRPORT",
+    "population": "0"
+  },
+  {
+    "community": "03H",
+    "population": "26"
+  },
+  {
+    "community": "STONEY 3",
+    "population": "0"
+  },
+  {
+    "community": "14U",
+    "population": "0"
+  },
+  {
+    "community": "01G",
+    "population": "0"
+  },
+  {
+    "community": "09K",
+    "population": "0"
+  },
+  {
+    "community": "03V",
+    "population": "0"
+  },
+  {
+    "community": "02B",
+    "population": "0"
+  },
+  {
+    "community": "01C",
+    "population": "44"
+  },
+  {
+    "community": "06B",
+    "population": "0"
+  },
+  {
+    "community": "01D",
+    "population": "0"
+  },
+  {
+    "community": "12A",
+    "population": "160"
+  },
+  {
+    "community": "12C",
+    "population": "136"
+  },
+  {
+    "community": "13H",
+    "population": "0"
+  },
+  {
+    "community": "14V",
+    "population": "72"
+  },
+  {
+    "community": "12B",
+    "population": "25"
+  },
+  {
+    "community": "13D",
+    "population": "0"
+  },
+  {
+    "community": "MILLRISE",
+    "population": "6746"
+  },
+  {
+    "community": "LAKE BONAVISTA",
+    "population": "10813"
+  },
+  {
+    "community": "BANFF TRAIL",
+    "population": "3780"
+  },
+  {
+    "community": "SILVER SPRINGS",
+    "population": "9154"
+  },
+  {
+    "community": "MARLBOROUGH",
+    "population": "8176"
+  },
+  {
+    "community": "COUGAR RIDGE",
+    "population": "5525"
+  },
+  {
+    "community": "DOWNTOWN COMMERCIAL CORE",
+    "population": "7719"
+  },
+  {
+    "community": "BANKVIEW",
+    "population": "5159"
+  },
+  {
+    "community": "HAYSBORO",
+    "population": "6435"
+  },
+  {
+    "community": "COVENTRY HILLS",
+    "population": "15688"
+  },
+  {
+    "community": "MIDNAPORE",
+    "population": "7114"
+  },
+  {
+    "community": "DOVER",
+    "population": "10300"
+  },
+  {
+    "community": "03C",
+    "population": "0"
+  },
+  {
+    "community": "01F",
+    "population": "276"
+  },
+  {
+    "community": "13C",
+    "population": "0"
+  },
+  {
+    "community": "GREAT PLAINS",
+    "population": "0"
+  },
+  {
+    "community": "SECTION 23",
+    "population": "0"
+  },
+  {
+    "community": "SHEPARD INDUSTRIAL",
+    "population": "262"
+  },
+  {
+    "community": "SADDLE RIDGE INDUSTRIAL",
+    "population": "53"
+  },
+  {
+    "community": "SKYLINE WEST",
+    "population": "0"
+  },
+  {
+    "community": "SKYLINE EAST",
+    "population": "0"
+  },
+  {
+    "community": "HORIZON",
+    "population": "75"
+  },
+  {
+    "community": "McCALL",
+    "population": "0"
+  },
+  {
+    "community": "PEGASUS",
+    "population": "0"
+  },
+  {
+    "community": "GREENVIEW INDUSTRIAL PARK",
+    "population": "0"
+  },
+  {
+    "community": "NORTH AIRWAYS",
+    "population": "0"
+  },
+  {
+    "community": "SUNRIDGE",
+    "population": "0"
+  },
+  {
+    "community": "GLENMORE PARK",
+    "population": "0"
+  },
+  {
+    "community": "CANADA OLYMPIC PARK",
+    "population": "0"
+  },
+  {
+    "community": "02E",
+    "population": "1118"
+  },
+  {
+    "community": "02C",
+    "population": "0"
+  },
+  {
+    "community": "03I",
+    "population": "0"
+  },
+  {
+    "community": "STONEY 2",
+    "population": "0"
+  },
+  {
+    "community": "ALYTH/BONNYBROOK",
+    "population": "14"
+  },
+  {
+    "community": "STONEGATE LANDING",
+    "population": "0"
+  },
+  {
+    "community": "CHRISTIE PARK",
+    "population": "2187"
+  },
+  {
+    "community": "WEST SPRINGS",
+    "population": "6654"
+  },
+  {
+    "community": "COACH HILL",
+    "population": "3226"
+  },
+  {
+    "community": "INGLEWOOD",
+    "population": "3263"
+  },
+  {
+    "community": "STRATHCONA PARK",
+    "population": "7213"
+  },
+  {
+    "community": "WILDWOOD",
+    "population": "2605"
+  },
+  {
+    "community": "MISSION",
+    "population": "4272"
+  },
+  {
+    "community": "BEDDINGTON HEIGHTS",
+    "population": "11951"
+  },
+  {
+    "community": "TUXEDO PARK",
+    "population": "4594"
+  },
+  {
+    "community": "ROYAL VISTA",
+    "population": "0"
+  },
+  {
+    "community": "ASPEN WOODS",
+    "population": "2824"
+  },
+  {
+    "community": "MANCHESTER INDUSTRIAL",
+    "population": "0"
+  },
+  {
+    "community": "09N",
+    "population": "0"
+  },
+  {
+    "community": "DIAMOND COVE",
+    "population": "766"
+  },
+  {
+    "community": "03W",
+    "population": "68"
+  },
+  {
+    "community": "12J",
+    "population": "59"
+  },
+  {
+    "community": "13G",
+    "population": "24"
+  },
+  {
+    "community": "GLAMORGAN",
+    "population": "6422"
+  },
+  {
+    "community": "CRESCENT HEIGHTS",
+    "population": "6113"
+  },
+  {
+    "community": "FOREST HEIGHTS",
+    "population": "6168"
+  },
+  {
+    "community": "PATTERSON",
+    "population": "4094"
+  },
+  {
+    "community": "DOWNTOWN EAST VILLAGE",
+    "population": "2448"
+  },
+  {
+    "community": "STONEY 1",
+    "population": "0"
+  },
+  {
+    "community": "STONEY 4",
+    "population": "0"
+  },
+  {
+    "community": "SHAWNESSY",
+    "population": "9446"
+  },
+  {
+    "community": "HIDDEN VALLEY",
+    "population": "11772"
+  },
+  {
+    "community": "PARKLAND",
+    "population": "3847"
+  },
+  {
+    "community": "COPPERFIELD",
+    "population": "5609"
+  },
+  {
+    "community": "SHAGANAPPI",
+    "population": "1603"
+  },
+  {
+    "community": "PANORAMA HILLS",
+    "population": "16444"
+  },
+  {
+    "community": "12F",
+    "population": "0"
+  },
+  {
+    "community": "VALLEYFIELD",
+    "population": "11"
+  },
+  {
+    "community": "FOOTHILLS",
+    "population": "0"
+  },
+  {
+    "community": "EAST FAIRVIEW INDUSTRIAL",
+    "population": "0"
+  },
+  {
+    "community": "CASTLERIDGE",
+    "population": "6096"
+  },
+  {
+    "community": "CHINATOWN",
+    "population": "1287"
+  },
+  {
+    "community": "RICHMOND",
+    "population": "3985"
+  },
+  {
+    "community": "SPRINGBANK HILL",
+    "population": "7875"
+  },
+  {
+    "community": "MONTEREY PARK",
+    "population": "10536"
+  },
+  {
+    "community": "TEMPLE",
+    "population": "10999"
+  },
+  {
+    "community": "SOUTHWOOD",
+    "population": "6123"
+  },
+  {
+    "community": "BRAESIDE",
+    "population": "6012"
+  },
+  {
+    "community": "KINGSLAND",
+    "population": "4358"
+  },
+  {
+    "community": "GOLDEN TRIANGLE",
+    "population": "0"
+  },
+  {
+    "community": "EASTFIELD",
+    "population": "0"
+  },
+  {
+    "community": "BURNS INDUSTRIAL",
+    "population": "0"
+  },
+  {
+    "community": "GLENDEER BUSINESS PARK",
+    "population": "0"
+  },
+  {
+    "community": "MERIDIAN",
+    "population": "0"
+  },
+  {
+    "community": "MAYLAND",
+    "population": "0"
+  },
+  {
+    "community": "STARFIELD",
+    "population": "0"
+  },
+  {
+    "community": "OGDEN SHOPS",
+    "population": "0"
+  },
+  {
+    "community": "ROSEDALE",
+    "population": "1644"
+  },
+  {
+    "community": "FOREST LAWN INDUSTRIAL",
+    "population": "130"
+  },
+  {
+    "community": "HIGHFIELD",
+    "population": "0"
+  },
+  {
+    "community": "SOUTH FOOTHILLS",
+    "population": "0"
+  },
+  {
+    "community": "EAST SHEPARD INDUSTRIAL",
+    "population": "0"
+  },
+  {
+    "community": "DEERFOOT BUSINESS CENTRE",
+    "population": "0"
+  },
+  {
+    "community": "WESTWINDS",
+    "population": "0"
+  }
+]
