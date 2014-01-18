@@ -1,7 +1,8 @@
 var population_search = function(keyword){
 
   var communities = _.filter(_.keys(window.population_data), function(community) {
-    return community.indexOf(keyword) >= 0;
+    keyword = keyword || "";
+    return community.toLowerCase().indexOf(keyword.toLowerCase()) >= 0;
   });
 
   return communities;
