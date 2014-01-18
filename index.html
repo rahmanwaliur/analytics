@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Calgary Community InfoGrapic Portal</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -16,15 +17,23 @@
     <div id="community-population"></div>
 
 
+
     <script id="search-result-template" type="text/x-handlebars-template">
       <p><a href="javascript:void(0)" data-community="{{community}}" class="community-link">{{community}}</a></p>
     </script>
 
     <script id="population-template" type="text/x-handlebars-template">
       <h2>{{community}}</h2>
+      <ul class="population-growth">
       {{#each yearly_data}}
-        <p>{{year}}: {{population}}</p>
+        <li>
+          <div>
+            <p><i class="fa fa-group fa-lg" style="font-size: {{relative_population}}em; color: red;"></i></p>
+            <p>{{year}}</p>
+          </div>
+        </li>
       {{/each}}
+      </ul>
     </script>
 
     <script type="text/javascript" src="script/underscore-min.js"></script>

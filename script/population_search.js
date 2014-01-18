@@ -40,7 +40,8 @@ var show_community = function(event){
   var yearly_data = [];
 
   _.each(_.keys(community_population), function(year){
-    yearly_data.push({year: year, population: community_population[year].population});
+    var population = community_population[year].population;
+    yearly_data.push({year: year, relative_population: population / 1000.0, population: population});
   });
 
   $('#community-population').append(window.population_template({community: community,yearly_data: yearly_data}));
