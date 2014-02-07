@@ -41,9 +41,14 @@ var show_community = function(event){
 
   _.each(_.keys(community_population), function(year){
     var population = community_population[year].population;
-    yearly_data.push({year: year, relative_population: population / 1000.0, population: population});
+    var chunks_of_population = Math.round(population / 100);
+    chunks = [];
+    for(var x = 0; x < chunks_of_population; x ++){
+      chunks.push(1);
+    };
+
+    yearly_data.push({year: year, population_chunks: chunks, population: $.number(population)});
   });
 
   $('#community-population').append(window.population_template({community: community,yearly_data: yearly_data}));
-
 };

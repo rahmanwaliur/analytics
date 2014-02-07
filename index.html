@@ -12,6 +12,10 @@
 
     <div class="container-fluid">
 
+      <div class="jumbotron heading text-center">
+        <h1>CALGARY</h1>
+      </div>
+
       <div class="row">
         <div class="col-md-2"></div>
 
@@ -20,9 +24,8 @@
             <form class="form-inline" role="form" id="search-form">
               <div class="form-group">
                 <label class="sr-only" for="search">Community</label>
-                <input id="search" class="form-control" type="search" placeholder="Search for a Community" size="100">
+                <input id="search" autocomplete="off" class="form-control" type="search" placeholder="Search for a Community" size="100">
               </div>
-              <button type="submit" class="btn btn-default">Go</button>
             </form>
           </div>
           <div class="row clearfix">
@@ -46,21 +49,37 @@
     </script>
 
     <script id="population-template" type="text/x-handlebars-template">
-      <h2>{{community}}</h2>
-      <ul class="population-growth">
-      {{#each yearly_data}}
-        <li>
-          <div>
-            <p><i class="fa fa-group fa-lg" style="font-size: {{relative_population}}em; color: red;"></i></p>
-            <p>{{year}}</p>
-          </div>
-        </li>
-      {{/each}}
-      </ul>
+      <div class="row population-view">
+        <h1 class="text-center">{{community}}</h1>
+
+        <div class="col-md-4 text-right">
+          <h2>POPULATION</h2>
+        </div>
+        <div class="col-md-4">
+          <ul class="population-growth">
+
+          {{#each yearly_data}}
+            <li>
+              <div>
+                <p>
+                  <span class="title">{{year}}: {{population}}</span>
+                  <p>
+                    {{#each population_chunks}}
+                      <span class="glyphicon glyphicon-th population"></span>
+                    {{/each}}
+                  </p>
+                </p>
+              </div>
+            </li>
+          {{/each}}
+          </ul>
+        </div>
+        <div class="col-md-4"></div>
     </script>
 
     <script type="text/javascript" src="script/underscore-min.js"></script>
     <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="script/jquery-number.js"></script>
     <script type="text/javascript" src="script/handlebars-v1.3.0.js"></script>
 
 
@@ -71,7 +90,9 @@
 
     <script type="text/javascript">
       $(function(){
-        $('#search-form').on('submit', search);
+        $('#search').on('keyup', search).trigger("keyup");
+
+
         $(document.body).on('click', '.community-link', show_community);
       });
     </script>
