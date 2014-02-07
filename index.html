@@ -1,20 +1,43 @@
 <html>
   <head>
     <title>Calgary Community InfoGrapic Portal</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
 
-    <form id='search-form'>
-      <p><input id="search" type="search" placeholder="Search for a Community" size="100"></p>
-      <p><button type="submit">Go</button></p>
-    </form>
+    <div class="container-fluid">
 
-    <div id="search-results"></div>
+      <div class="row">
+        <div class="col-md-2"></div>
 
-    <div id="community-population"></div>
+        <div class="col-md-8">
+          <div class="row">
+            <form class="form-inline" role="form" id="search-form">
+              <div class="form-group">
+                <label class="sr-only" for="search">Community</label>
+                <input id="search" class="form-control" type="search" placeholder="Search for a Community" size="100">
+              </div>
+              <button type="submit" class="btn btn-default">Go</button>
+            </form>
+          </div>
+          <div class="row clearfix">
+            <div id="search-results"></div>
+          </div>
+        </div>
+
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row clearfix">
+        <div id="community-population"></div>
+      </div>
+
+    </div>
 
 
 
@@ -39,6 +62,9 @@
     <script type="text/javascript" src="script/underscore-min.js"></script>
     <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="script/handlebars-v1.3.0.js"></script>
+
+
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="data/population.js"></script>
     <script type="text/javascript" src="script/population_search.js"></script>
