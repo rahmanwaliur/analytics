@@ -37,7 +37,12 @@
       </div>
 
       <div class="row clearfix">
+        <div class="text-center">
+          <h1 class="text-center community"></h1>
+        </div>
+
         <div id="community-population"></div>
+        <div id="community-employment"></div>
       </div>
 
     </div>
@@ -50,7 +55,6 @@
 
     <script id="population-template" type="text/x-handlebars-template">
       <div class="row population-view">
-        <h1 class="text-center">{{community}}</h1>
 
         <div class="col-md-4 text-right">
           <h2>POPULATION</h2>
@@ -77,6 +81,34 @@
         <div class="col-md-4"></div>
     </script>
 
+    <script id="employment-template" type="text/x-handlebars-template">
+      <div class="row employment-view">
+
+        <div class="col-md-4 text-right">
+          <h2>EMPLOYMENT</h2>
+        </div>
+        <div class="col-md-4">
+          <ul class="employment-growth">
+
+          {{#each yearly_data}}
+            <li>
+              <div>
+                <p>
+                  <span class="title">{{year}}: {{employment}}</span>
+                  <p>
+                    {{#each employment_chunks}}
+                      <span class="glyphicon glyphicon-th employment"></span>
+                    {{/each}}
+                  </p>
+                </p>
+              </div>
+            </li>
+          {{/each}}
+          </ul>
+        </div>
+        <div class="col-md-4"></div>
+    </script>
+
     <script type="text/javascript" src="script/underscore-min.js"></script>
     <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="script/jquery-number.js"></script>
@@ -86,6 +118,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="data/population.js"></script>
+    <script type="text/javascript" src="data/employment.js"></script>
     <script type="text/javascript" src="script/population_search.js"></script>
 
     <script type="text/javascript">

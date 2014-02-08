@@ -1,8 +1,8 @@
 require 'csv'
 require 'json'
 
-csv_files = File.join(File.dirname(__FILE__), 'data', '*.csv')
-json_file = File.join(File.dirname(__FILE__), 'data', 'pupulation.json')
+csv_files = File.join(File.dirname(__FILE__), 'data', 'CENSUS_COMMUNITY_DIST_2011.csv')
+json_file = File.join(File.dirname(__FILE__), 'data', 'employed.json')
 
 
 pupulation_data = {}
@@ -13,7 +13,7 @@ Dir.glob(csv_files).each do |csv_file|
   CSV.foreach(csv_file, headers: true) do |row|
     community = row['NAME']
     pupulation_data[community] ||= {}
-    pupulation_data[community][year] = {population: row['RES_CNT']}
+    pupulation_data[community][year] = {employed: row['EMPLYD_CNT']}
   end
 
 end
