@@ -32,7 +32,7 @@ var search = function(event){
 var show_community = function(event){
   var community = $(event.target).data('community');
 
-  $('#community').html(community);
+  $('.community').html(community);
 
   $('#search-results').empty();
   show_population(community);

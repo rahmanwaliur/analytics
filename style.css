@@ -1,34 +1,54 @@
 body{
-  background-color: #2c3e50;
   margin: 5%;
-  color: #ecf0f1;
+  color: #2ecc71;
 }
 
 .heading{
   background-color: inherit;
 }
 
-ul.population-growth li{
+.growth li{
   display: inline;
 }
 
 
-ul.population-growth li:nth-child(2n) .title{
+.growth li:nth-child(2n) .title{
   color: #2ecc71;
   font-size: 1.5em;
 }
 
-ul.population-growth li:nth-child(2n) .glyphicon{
+.growth li:nth-child(2n) .glyphicon{
   font-size: 0.7em;
   color: #1abc9c;
 }
 
-ul.population-growth li:nth-child(2n+1) .title{
+.growth li:nth-child(2n+1) .title{
   color: #3498db;
   font-size: 1.5em;
 }
 
-ul.population-growth li:nth-child(2n+1) .glyphicon{
+.growth li:nth-child(2n+1) .glyphicon{
+  font-size: 0.7em;
+  color: #3498db;
+}
+
+
+.growth li:nth-child(2n) .title{
+  color: #2ecc71;
+  font-size: 1.5em;
+}
+
+.growth li:nth-child(2n) .glyphicon{
+  font-size: 0.7em;
+  color: #1abc9c;
+}
+
+.growth li:nth-child(2n+1) .title{
+  color: #3498db;
+  font-size: 1.5em;
+}
+
+.growth li:nth-child(2n+1) .glyphicon{
   font-size: 0.7em;
   color: #3498db;
 }
