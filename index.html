@@ -17,68 +17,81 @@
       </div>
 
       <div class="row">
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8">
+        <div class="col-md-5">
           <div class="row">
-            <form class="form-inline" role="form" id="search-form">
+            <form class="form-inline text-center" role="form" id="search-form">
               <div class="form-group">
                 <label class="sr-only" for="search">Community</label>
-                <input id="search" autocomplete="off" class="form-control" type="search" placeholder="Search for a Community" size="100">
+                <input data-community="1" autocomplete="off" class="search form-control input-lg" type="search" placeholder="Search for a Community">
               </div>
             </form>
           </div>
           <div class="row clearfix">
-            <div id="search-results"></div>
+            <ul id="search-results-1" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            </ul>
           </div>
         </div>
 
         <div class="col-md-2"></div>
-      </div>
-
-      <div class="row clearfix">
-        <div class="text-center">
-          <h1 class="text-center community"></h1>
+        <div class="col-md-5">
+          <div class="row">
+            <form class="form-inline  text-center" role="form" id="search-form">
+              <div class="form-group">
+                <label class="sr-only" for="search">Community</label>
+                <input data-community="2" autocomplete="off" class="search form-control input-lg" type="search" placeholder="Search for a Community">
+              </div>
+            </form>
+          </div>
+          <div class="row clearfix">
+            <ul id="search-results-2" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            </ul>
+          </div>
         </div>
-
-        <div id="community-population"></div>
-        <div id="community-employment"></div>
       </div>
+
+      <div class="row">
+        <div class="col-md-5"><h3 id="community-1" class="text-center"></h3></div>
+        <div class="col-md-2 text-center"><h3>vs</h3></div>
+        <div class="col-md-5"><h3 id="community-2" class="text-center"></h3></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5" id="community-population-1"></div>
+        <div class="col-md-2 text-center"><h3>POPULATION</h3></div>
+        <div class="col-md-5" id="community-population-2"></div>
+      </div>
+
+      <div class="clearfix"></div>
 
     </div>
 
-
-
     <script id="search-result-template" type="text/x-handlebars-template">
-      <p><a href="javascript:void(0)" data-community="{{community}}" class="community-link">{{community}}</a></p>
+      <li>
+        <a href="#" role="menuitem" tabindex="-1" data-community-id="{{community_id}}" data-community="{{community}}" class="community-link">{{community}}
+        </a>
+      </li>
     </script>
 
     <script id="population-template" type="text/x-handlebars-template">
       <div class="row population-view">
+        <ul class="population-growth growth">
 
-        <div class="col-md-4 text-right">
-          <h2>POPULATION</h2>
-        </div>
-        <div class="col-md-4">
-          <ul class="population-growth growth">
-
-          {{#each yearly_data}}
-            <li>
-              <div>
+        {{#each yearly_data}}
+          <li>
+            <div>
+              <p>
+                <span class="title">{{year}}: {{population}}</span>
                 <p>
-                  <span class="title">{{year}}: {{population}}</span>
-                  <p>
-                    {{#each population_chunks}}
-                      <span class="glyphicon glyphicon-th population"></span>
-                    {{/each}}
-                  </p>
+                  {{#each population_chunks}}
+                    <span class="glyphicon glyphicon-th population"></span>
+                  {{/each}}
                 </p>
-              </div>
-            </li>
-          {{/each}}
-          </ul>
-        </div>
-        <div class="col-md-4"></div>
+              </p>
+            </div>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
     </script>
 
     <script id="employment-template" type="text/x-handlebars-template">
@@ -123,10 +136,7 @@
 
     <script type="text/javascript">
       $(function(){
-        $('#search').on('keyup', search).trigger("keyup");
-
-
-        $(document.body).on('click', '.community-link', show_community);
+        $('.search').on('keyup', search);
       });
     </script>
   </body>
