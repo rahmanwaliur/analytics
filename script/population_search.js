@@ -1,18 +1,18 @@
-var population_search = function(keyword){
+var population_search = function(population_data, keyword){
 
-  var communities = _.filter(_.keys(window.population_data), function(community) {
+  var communities = _.filter(_.keys(population_data), function(community) {
     keyword = keyword || "";
     return community.toLowerCase().indexOf(keyword.toLowerCase()) >= 0;
   });
 
-  return communities;
+  return communities.sort();
 
 };
 
 window.search_results_template = Handlebars.compile($('#search-result-template').html());
 
 var show_search_results = function(keyword, results_view){
-  var communities = population_search(keyword);
+  var communities = population_search(window.population_data, keyword);
   results_view.empty();
   $('#community-population').empty();
 
