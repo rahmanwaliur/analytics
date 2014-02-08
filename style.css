@@ -7,6 +7,10 @@ body{
   background-color: inherit;
 }
 
+.metric {
+  padding: 15px;
+}
+
 .growth li{
   display: inline;
 }

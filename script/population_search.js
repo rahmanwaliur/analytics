@@ -43,7 +43,7 @@ var show_community = function(event){
   $('#search-results-' + community_id).empty().hide();
 
   show_population(community, community_id);
-  // show_employment(community);
+  show_employment(community, community_id);
 };
 
 window.population_template = Handlebars.compile($('#population-template').html());
@@ -71,10 +71,12 @@ var show_population = function(community, community_id){
 };
 
 window.employment_template = Handlebars.compile($('#employment-template').html());
-var show_employment = function(community){
+var show_employment = function(community, community_id){
   var community_employment = window.employment_data[community];
 
-  $('#community-employment').empty();
+  var employment_container =$('#community-employment-' + community_id);
+
+  employment_container.empty();
 
   var yearly_data = [];
 
@@ -89,5 +91,5 @@ var show_employment = function(community){
     yearly_data.push({year: year, employment_chunks: chunks, employment: $.number(employment)});
   });
 
-  $('#community-employment').append(window.employment_template({community: community, yearly_data: yearly_data}));
+  employment_container.append(window.employment_template({community: community, yearly_data: yearly_data}));
 };
