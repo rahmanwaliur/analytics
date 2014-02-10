@@ -1,5 +1,28 @@
+var max_crimes = function(){
+    var community_1 = $('#community-1').text();
+    var community_2 = $('#community-2').text();
+
+    var max = 0;
+
+    if(community_1){
+        max = Math.max(max, window.crimes_data[community_1].year_2012, window.crimes_data[community_1].year_2013)
+    }
+
+    if(community_2){
+        max = Math.max(max, window.crimes_data[community_2].year_2012, window.crimes_data[community_2].year_2013)
+    }
+
+    return max + 100;
+};
+
+var current_max_crimes = 0;
+
 var show_crimes = function(community, community_id){
     var crimes = window.crimes_data[community];
+
+    if(!crimes){
+        return;
+    }
 
     var data =  [
         {year: 2012, crimes: crimes.year_2012},
@@ -17,8 +40,15 @@ var show_crimes = function(community, community_id){
         .domain([2012, 2013])
         .range([0, 200]);
 
+    var max_crimes_selected = max_crimes();
+    if (current_max_crimes != max_crimes_selected){
+        current_max_crimes = max_crimes();
+        var other_community_id = (community_id == 1) ? 2 : 1;
+        show_crimes($('#community-' + other_community_id).text(), other_community_id);
+    }
+
     var computeY = d3.scale.linear()
-        .domain([0, 2000])
+        .domain([0, max_crimes()])
         .range([barHeight, 0]);
 
     $("#community-crimes-" + community_id).empty();
@@ -69,5 +99,4 @@ var show_crimes = function(community, community_id){
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")");
-
 };
