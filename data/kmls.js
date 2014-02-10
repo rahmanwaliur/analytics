@@ -1,4 +1,4 @@
-{
+window.kml_data = {
   "12J": "12J",
   "SKYLINE WEST": "SKW",
   "UPPER MOUNT ROYAL": "UMR",
@@ -291,4 +291,4 @@
   "EVERGREEN": "EVE",
   "LEGACY": "LEG",
   "SIGNAL HILL": "SIG"
-}
+};
