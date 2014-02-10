@@ -11,6 +11,10 @@ body{
   padding: 15px;
 }
 
+.growth{
+  padding: 0;
+}
+
 .growth li{
   display: inline;
 }
