@@ -64,3 +64,27 @@ body{
 .map-canvas {
   height: 200px;
 }
+
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
+.red rect{
+  fill: crimson;
+}
+
+
+.bar text {
+  fill: #fff;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.year text{
+  font-size: 2em;
+}
