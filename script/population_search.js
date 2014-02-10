@@ -20,7 +20,7 @@ var show_search_results = function(keyword, results_view, community_id){
     results_view.append(window.search_results_template({community: community, community_id: community_id}) );
   });
 
-  results_view.show().dropdown("toggle")
+  results_view.show().dropdown("toggle");
   results_view.find('.community-link').on("click", show_community);
 };
 
@@ -42,8 +42,13 @@ var show_community = function(event){
 
   $('#search-results-' + community_id).empty().hide();
 
+  show_sector(community, community_id);
   show_population(community, community_id);
   show_employment(community, community_id);
+};
+
+var show_sector = function(community, community_id){
+  $('#community-sector-' + community_id).html(window.sector_data[community]);
 };
 
 window.population_template = Handlebars.compile($('#population-template').html());
