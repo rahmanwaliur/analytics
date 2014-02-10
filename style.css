@@ -66,8 +66,12 @@ body{
 }
 
 .bar rect {
-  fill: steelblue;
+  fill: orange;
   shape-rendering: crispEdges;
+}
+
+.bar rect:hover {
+  fill: orangered;
 }
 
 .red rect{

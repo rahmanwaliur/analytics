@@ -99,4 +99,5 @@ var show_crimes = function(community, community_id){
     svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")");
+
 };
