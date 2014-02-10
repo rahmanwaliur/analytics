@@ -45,6 +45,7 @@ var show_community = function(event){
   show_sector(community, community_id);
   show_population(community, community_id);
   show_employment(community, community_id);
+  show_map();
 };
 
 var show_sector = function(community, community_id){

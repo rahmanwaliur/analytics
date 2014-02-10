@@ -56,3 +56,7 @@ body{
   font-size: 0.7em;
   color: #3498db;
 }
+
+.map-canvas {
+  height: 200px;
+}
