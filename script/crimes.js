@@ -45,7 +45,7 @@ var show_crimes = function(community, community_id){
 
     bar.append("rect")
         .attr("x", 1)
-        .attr("width", 100)
+        .attr("width", 180)
         .attr("height", function(d) { return barHeight - computeY(d.crimes); });
 
     bar.append("text")
@@ -63,7 +63,7 @@ var show_crimes = function(community, community_id){
         .append("text")
         .attr("text-anchor", "middle")
         .attr("x", 50)
-        .attr("width", 100)
+        .attr("width", 180)
         .text(function(d){return d.year;});
 
     svg.append("g")
