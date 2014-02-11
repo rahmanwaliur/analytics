@@ -9,8 +9,6 @@ var population_search = function(population_data, keyword){
 
 };
 
-window.search_results_template = Handlebars.compile($('#search-result-template').html());
-
 var show_search_results = function(keyword, results_view, community_id){
   var communities = population_search(window.population_data, keyword);
   results_view.empty();
@@ -44,18 +42,17 @@ var show_community = function(event){
 
   $('#search-results-' + community_id).empty().hide();
 
-  show_sector(community, community_id);
+  show_sector(window.sector_data[community], community_id);
   show_map(community, community_id);
   show_population(community, community_id);
   show_employment(community, community_id);
   show_crimes(community, community_id);
 };
 
-var show_sector = function(community, community_id){
-  $('#community-sector-' + community_id).html(window.sector_data[community]);
+var show_sector = function(sector, community_id){
+  $('#community-sector-' + community_id).html(sector);
 };
 
-window.population_template = Handlebars.compile($('#population-template').html());
 var show_population = function(community, community_id){
   var community_population = window.population_data[community];
 
@@ -79,7 +76,6 @@ var show_population = function(community, community_id){
   population_container.append(window.population_template({community: community,yearly_data: yearly_data}));
 };
 
-window.employment_template = Handlebars.compile($('#employment-template').html());
 var show_employment = function(community, community_id){
   var community_employment = window.employment_data[community];
 

@@ -159,6 +159,10 @@
     <script type="text/javascript">
       $(function(){
         $('.search').on('keyup', search);
+        window.search_results_template = Handlebars.compile($('#search-result-template').html());
+        window.population_template = Handlebars.compile($('#population-template').html());
+        window.employment_template = Handlebars.compile($('#employment-template').html());
+
       });
     </script>
 

@@ -38,3 +38,17 @@ describe("population_search", function() {
   })
 
 });
+
+describe("show_sector", function() {
+  beforeEach(function(){
+    $('body').append('<div id="community-sector-1"></div>');
+  });
+  afterEach(function(){
+    $('#community-sector-1').remove();
+  });
+
+  it('shows the city sector for the selected community', function(){
+    show_sector("NW", 1);
+    expect($('#community-sector-1').html()).toEqual("NW");
+  });
+});
