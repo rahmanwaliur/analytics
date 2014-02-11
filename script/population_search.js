@@ -38,6 +38,8 @@ var show_community = function(event){
   var community = $(event.target).data('community');
   var community_id = $(event.target).data('community-id');
 
+  $(".metric").show();
+
   $('#community-' + community_id).html(community);
 
   $('#search-results-' + community_id).empty().hide();

@@ -3,12 +3,24 @@ body{
   color: #2ecc71;
 }
 
+
+#search-form .form-group{
+  width: 100%;
+}
+
+#search-form .form-group .search{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .heading{
   background-color: inherit;
 }
 
 .metric {
   padding: 15px;
+  display: none;
 }
 
 .growth{
