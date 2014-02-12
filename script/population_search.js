@@ -47,6 +47,7 @@ var show_community = function(event){
   show_population(community, community_id);
   show_employment(community, community_id);
   show_crimes(community, community_id);
+  show_income(community, community_id);
 };
 
 var show_sector = function(sector, community_id){
@@ -97,4 +98,16 @@ var show_employment = function(community, community_id){
   });
 
   employment_container.append(window.employment_template({community: community, yearly_data: yearly_data}));
+};
+
+var show_income = function(community, community_id){
+  var community_income = window.income_data[community];
+
+  var income_container =$('#community-income-' + community_id);
+  var income_formatted = {};
+
+  _.each(community_income, function(income, year){
+    income_formatted[year] = $.number(income, 0);
+  });
+  income_container.empty().append(window.income_template({community: community, income: income_formatted}));
 };
