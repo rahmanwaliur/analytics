@@ -7,7 +7,7 @@ window.income_data = {
     "year_2000": 52603,
     "year_2005": 50778
   },
-  "ALBERT PARK RADISSON HEIGHTS": {
+  "ALBERT PARK/RADISSON HEIGHTS": {
     "year_2000": 43393,
     "year_2005": 41971
   },
@@ -71,7 +71,7 @@ window.income_data = {
     "year_2000": 64263,
     "year_2005": 65768
   },
-  "BRIDGELAND RIVERSIDE": {
+  "BRIDGELAND/RIVERSIDE": {
     "year_2000": 36279,
     "year_2005": 44363
   },
@@ -199,7 +199,7 @@ window.income_data = {
     "year_2000": 147055,
     "year_2005": 143441
   },
-  "DOUGLASDALE GLEN": {
+  "DOUGLASDALE/GLEN": {
     "year_2000": 105920,
     "year_2005": 66060
   },
@@ -291,7 +291,7 @@ window.income_data = {
     "year_2000": 52385,
     "year_2005": 43839
   },
-  "GREENWOOD GREENBRIAR": {
+  "GREENWOOD/GREENBRIAR": {
     "year_2000": 37048,
     "year_2005": 43539
   },
@@ -327,7 +327,7 @@ window.income_data = {
     "year_2000": 58005,
     "year_2005": 55434
   },
-  "HOUNSFIELD HEIGHTS BRIAR HILL": {
+  "HOUNSFIELD HEIGHTS/BRIAR HILL": {
     "year_2000": 67912,
     "year_2005": 61207
   },
@@ -343,7 +343,7 @@ window.income_data = {
     "year_2000": 59884,
     "year_2005": 99740
   },
-  "KILLARNEY GLENGARRY": {
+  "KILLARNEY/GLENGARRY": {
     "year_2000": 53127,
     "year_2005": 53799
   },
@@ -587,7 +587,7 @@ window.income_data = {
     "year_2000": 91248,
     "year_2005": 143513
   },
-  "SCARBORO SUNALTA WEST": {
+  "SCARBORO/ SUNALTA WEST": {
     "year_2000": 90144,
     "year_2005": 106366
   },
@@ -743,7 +743,7 @@ window.income_data = {
     "year_2000": 44997,
     "year_2005": 43828
   },
-  "WINSTON HEIGHTS MOUNTVIEW": {
+  "WINSTON HEIGHTS/MOUNTVIEW": {
     "year_2000": 46869,
     "year_2005": 54942
   },
