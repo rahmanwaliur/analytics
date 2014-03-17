@@ -1,3 +1,7 @@
+var communities = function(){
+  return _.keys(population_data);
+}
+
 var population_search = function(population_data, keyword){
 
   var communities = _.filter(_.keys(population_data), function(community) {

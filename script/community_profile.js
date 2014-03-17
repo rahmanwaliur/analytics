@@ -18,23 +18,33 @@ var CommunityProfile = (function() {
   __proto__.score = function(user_profile){
     var income_score = this._income_similarity(user_profile.income);
     var crime_score =  this._crimes_score();
+    var sector_score = this._sector_similarity(user_profile.preferred_sectors);
 
     return {
-      score: income_score + crime_score,
+      total_score: income_score + crime_score + sector_score,
       income_score: income_score,
-      crime_score: crime_score
+      crime_score: crime_score,
+      sector_score: sector_score
     };
   };
 
   __proto__._income_similarity = function(user_income){
-    if(!user_income) return 0;
+    if(!user_income || !this.income() || this.income() === 0) return 0;
 
     var community_income2005 = this.income().year_2005;
 
     return 100 - Math.abs( community_income2005 - user_income) * 100.0 / community_income2005;
-  }
+  };
+
+  __proto__._sector_similarity = function(user_preferred_sectors){
+    if(!user_preferred_sectors || user_preferred_sectors.length === 0) return 0;
+
+    return _.contains(user_preferred_sectors, this.sector()) ? 100 : 0;
+  };
 
   __proto__._crimes_score = function(){
+    if(!this.crimes() || this.crimes().year_2013 === 0) return 100;
+
     var latestCrimes = this.crimes().year_2013;
     var latestPopulation = parseInt(this.population()[2011].population, 10);
 
