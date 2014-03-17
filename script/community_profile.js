@@ -16,16 +16,31 @@ var CommunityProfile = (function() {
 
 
   __proto__.score = function(user_profile){
-    return this._incomeSimilarity(user_profile.income);
+    var income_score = this._income_similarity(user_profile.income);
+    var crime_score =  this._crimes_score();
+
+    return {
+      score: income_score + crime_score,
+      income_score: income_score,
+      crime_score: crime_score
+    };
   };
 
-  __proto__._incomeSimilarity = function(user_income){
+  __proto__._income_similarity = function(user_income){
     if(!user_income) return 0;
 
     var community_income2005 = this.income().year_2005;
 
     return 100 - Math.abs( community_income2005 - user_income) * 100.0 / community_income2005;
   }
+
+  __proto__._crimes_score = function(){
+    var latestCrimes = this.crimes().year_2013;
+    var latestPopulation = parseInt(this.population()[2011].population, 10);
+
+    var crimesPerPerson = latestCrimes / latestPopulation;
+    return 100 - crimesPerPerson;
+  };
 
   return CommunityProfile;
 
