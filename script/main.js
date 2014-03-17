@@ -42,21 +42,21 @@ var show_community = function(event){
 
   $('#search-results-' + community_id).empty().hide();
 
-  show_sector(window.sector_data[community], community_id);
-  show_map(community, community_id);
-  show_population(community, community_id);
-  show_employment(community, community_id);
-  show_crimes(community, community_id);
-  show_income(community, community_id);
+  var communityProfile = new CommunityProfile(community, window);
+
+  show_sector(communityProfile.sector(), community_id);
+  show_map(communityProfile.kml_url(), community_id);
+  show_population(communityProfile.population(), community_id);
+  show_employment(communityProfile.employment(), community_id);
+  show_crimes(communityProfile.crimes(), community_id);
+  show_income(communityProfile.income(), community_id);
 };
 
 var show_sector = function(sector, community_id){
   $('#community-sector-' + community_id).html(sector);
 };
 
-var show_population = function(community, community_id){
-  var community_population = window.population_data[community];
-
+var show_population = function(community_population, community_id){
   var population_container =$('#community-population-' + community_id);
 
   population_container.empty();
@@ -74,12 +74,10 @@ var show_population = function(community, community_id){
     yearly_data.push({year: year, population_chunks: chunks, population: $.number(population)});
   });
 
-  population_container.append(window.population_template({community: community,yearly_data: yearly_data}));
+  population_container.append(window.population_template({community: community_population,yearly_data: yearly_data}));
 };
 
-var show_employment = function(community, community_id){
-  var community_employment = window.employment_data[community];
-
+var show_employment = function(community_employment, community_id){
   var employment_container =$('#community-employment-' + community_id);
 
   employment_container.empty();
@@ -97,17 +95,15 @@ var show_employment = function(community, community_id){
     yearly_data.push({year: year, employment_chunks: chunks, employment: $.number(employment)});
   });
 
-  employment_container.append(window.employment_template({community: community, yearly_data: yearly_data}));
+  employment_container.append(window.employment_template({yearly_data: yearly_data}));
 };
 
-var show_income = function(community, community_id){
-  var community_income = window.income_data[community];
-
+var show_income = function(community_income, community_id){
   var income_container =$('#community-income-' + community_id);
   var income_formatted = {};
 
   _.each(community_income, function(income, year){
     income_formatted[year] = $.number(income, 0);
   });
-  income_container.empty().append(window.income_template({community: community, income: income_formatted}));
+  income_container.empty().append(window.income_template({income: income_formatted}));
 };
