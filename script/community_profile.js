@@ -22,9 +22,9 @@ var CommunityProfile = (function() {
   __proto__._incomeSimilarity = function(user_income){
     if(!user_income) return 0;
 
-    var communityIncome2005 = this.income().year_2005;
+    var community_income2005 = this.income().year_2005;
 
-    return 100 - Math.abs( communityIncome2005 - user_income) * 100.0 / communityIncome2005;
+    return 100 - Math.abs( community_income2005 - user_income) * 100.0 / community_income2005;
   }
 
   return CommunityProfile;
