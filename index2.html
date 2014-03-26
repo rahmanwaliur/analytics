@@ -38,7 +38,8 @@
         </span>
         {{communities_to_compare | join }}
       </h2>
-      <population_comparison />
+      <population_comparison></population_comparison>
+      <employment_comparison></employment_comparison>
     </div>
   </script>
 
@@ -94,7 +95,7 @@
   <script type="text/ng-template" id="population_comparison.html">
     <h3>Population</h3>
     <div class="row">
-      <div ng-repeat="community_profile in community_profiles">
+      <div class="profile-row" ng-repeat="community_profile in community_profiles">
         <div class="col-md-2">
           {{community_profile.name}}
         </div>
@@ -103,12 +104,31 @@
           <div>
             2009: {{community_profile.population(2009) | number}}
             2011: {{community_profile.population(2011) | number}}
+            {{community_profile.population(2011) - community_profile.population(2009)}}
           </div>
         </div>
         <div class="clearfix"></div>
       </div>
     </div>
+  </script>
 
+  <script type="text/ng-template" id="employment_comparison.html">
+    <h3>Employment</h3>
+    <div class="row">
+      <div class="profile-row" ng-repeat="community_profile in community_profiles">
+        <div class="col-md-2">
+          {{community_profile.name}}
+        </div>
+        <div class="col-md-10">
+          <span ng-repeat="chunck in employment_chuncks(community_profile) track by $index" class="glyphicon glyphicon-briefcase population"></span>
+          <div>
+            2011: {{community_profile.employment(2011) | number}}
+            ({{community_profile.employment_precentage(2011) | number:0}}%)
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>

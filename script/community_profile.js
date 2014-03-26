@@ -15,7 +15,14 @@ var CommunityProfile = (function() {
     return NaN;
   }
 
-  __proto__.employment = function() {return this.data.employment_data[this.name];}
+  __proto__.employment = function(year) {
+    return parseInt(this.data.employment_data[this.name]['' + year]['employment'], 10);
+  }
+
+  __proto__.employment_precentage = function(year) {
+    return this.employment(year) / this.population(year) * 100;
+  }
+
   __proto__.income = function() {return this.data.income_data[this.name];}
   __proto__.crimes = function() {return this.data.crimes_data[this.name];}
   __proto__.kml_url = function() {return 'http://smsohan.com/analytics/data/kmls/' + this.data.kml_data[this.name] + ".kml";}
@@ -52,7 +59,7 @@ var CommunityProfile = (function() {
     if(!this.crimes() || this.crimes().year_2013 === 0) return 100;
 
     var latestCrimes = this.crimes().year_2013;
-    var latestPopulation = parseInt(this.population()[2011].population, 10);
+    var latestPopulation = this.population(2011);
 
     var crimesPerPerson = latestCrimes / latestPopulation;
     return 100 - crimesPerPerson;

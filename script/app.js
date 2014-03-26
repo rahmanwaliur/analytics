@@ -47,16 +47,25 @@ app.directive('populationComparison', function(){
     templateUrl: 'population_comparison.html',
 
     controller: function($scope){
-      var max_population = _.max(_.map($scope.community_profiles, function(community_profile){
-        return community_profile.population(2011);
-      }));
-
-      var chunkSize = max_population / 50;
-
       $scope.population_chuncks = function(community_profile){
-        console.dir(community_profile);
+        var relativeSize = Math.ceil(community_profile.population(2011) / $scope.population_chunk_size());
+        return new Array(relativeSize);
+      };
+    }
 
-        var relativeSize = Math.ceil(community_profile.population(2011) / chunkSize);
+  }
+
+});
+
+app.directive('employmentComparison', function(){
+
+  return {
+    restrict: 'E',
+    templateUrl: 'employment_comparison.html',
+
+    controller: function($scope){
+      $scope.employment_chuncks = function(community_profile){
+        var relativeSize = Math.ceil(community_profile.employment(2011) / $scope.population_chunk_size());
         return new Array(relativeSize);
       };
     }
@@ -73,6 +82,14 @@ app.controller('CompareController', function($scope, $rootScope, $route){
   $scope.community_profiles = _.map($scope.communities_to_compare, function(community_name){
     return new CommunityProfile(community_name, window);
   });
+
+  $scope.population_chunk_size = function(){
+    var max_population = _.max(_.map($scope.community_profiles, function(community_profile){
+      return community_profile.population(2011);
+    }));
+
+    return max_population / 50;
+  };
 
 });
 
