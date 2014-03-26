@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>Calgary Community InfoGrapic Portal</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="jumbotron heading text-center">
+        <h1>CALGARY</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <form class="form-inline text-center" role="form" id="search-form">
+              <div class="form-group">
+                <label class="sr-only" for="search">Community</label>
+                <input data-community="1" autocomplete="off" class="search form-control input-lg" type="search" placeholder="Search for a Community">
+              </div>
+            </form>
+          </div>
+          <div class="row clearfix">
+            <ul id="search-results-1" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <div class="row">
+            <form class="form-inline  text-center" role="form" id="search-form">
+              <div class="form-group">
+                <label class="sr-only" for="search">Community</label>
+                <input data-community="2" autocomplete="off" class="search form-control input-lg" type="search" placeholder="Search for a Community">
+              </div>
+            </form>
+          </div>
+          <div class="row clearfix">
+            <ul id="search-results-2" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5"><h3 id="community-1" class="text-center"></h3><h4 id="community-sector-1" class="text-center"></div>
+        <div class="col-md-2 text-center"><h3>vs</h3></div>
+        <div class="col-md-5"><h3 id="community-2" class="text-center"><h4 id="community-sector-2" class="text-center"></h3></div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5 map-canvas" id="map-canvas-1"></div>
+        <div class="col-md-2 text-center"></div>
+        <div class="col-md-5 map-canvas" id="map-canvas-2"></div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5" id="community-population-1"></div>
+        <div class="col-md-2 text-center"><h3>POPULATION</h3></div>
+        <div class="col-md-5 text-right" id="community-population-2"></div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5" id="community-employment-1"></div>
+        <div class="col-md-2 text-center"><h3>EMPLOYMENT</h3></div>
+        <div class="col-md-5 text-right" id="community-employment-2"></div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5" id="community-income-1"></div>
+        <div class="col-md-2 text-center"><h3>INCOME</h3></div>
+        <div class="col-md-5 text-right" id="community-income-2"></div>
+      </div>
+
+      <div class="row metric">
+        <div class="col-md-5" id="community-crimes-1"></div>
+        <div class="col-md-2 text-center"><h3>CRIME</h3></div>
+        <div class="col-md-5" id="community-crimes-2"></div>
+      </div>
+
+      <div class="clearfix"></div>
+
+    </div>
+
+    <script id="search-result-template" type="text/x-handlebars-template">
+      <li>
+        <a href="#" role="menuitem" tabindex="-1" data-community-id="{{community_id}}" data-community="{{community}}" class="community-link">{{community}}
+        </a>
+      </li>
+    </script>
+
+    <script id="population-template" type="text/x-handlebars-template">
+      <div class="row population-view">
+        <ul class="population-growth growth">
+
+        {{#each yearly_data}}
+          <li>
+            <div>
+              <p>
+                <span class="title">{{year}}: {{population}}</span>
+                <p>
+                  {{#each population_chunks}}
+                    <span class="glyphicon glyphicon-user population"></span>
+                  {{/each}}
+                </p>
+              </p>
+            </div>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    </script>
+
+    <script id="employment-template" type="text/x-handlebars-template">
+      <div class="row employment-view">
+        <ul class="employment-growth growth">
+
+        {{#each yearly_data}}
+          <li>
+            <div>
+              <p>
+                <span class="title">{{year}}: {{employment}}</span>
+                <p>
+                  {{#each employment_chunks}}
+                    <span class="glyphicon glyphicon-user employment"></span>
+                  {{/each}}
+                </p>
+              </p>
+            </div>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    </script>
+
+    <script id="income-template" type="text/x-handlebars-template">
+      <div class="row income-view">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="year">2000</div>
+            <div class="amount">${{income.year_2000}}</div>
+          </div>
+          <div class="col-md-6">
+            <div class="year">2005</div>
+            <div class="amount">${{income.year_2005}}</div>
+          </div>
+        </ul>
+      </div>
+    </script>
+
+    <script type="text/javascript" src="script/underscore-min.js"></script>
+    <script type="text/javascript" src="script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="script/jquery-number.js"></script>
+    <script type="text/javascript" src="script/handlebars-v1.3.0.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4EYtmifgrDgCpmcARgSZCklgjYgN64Tc&sensor=false">
+    </script>
+
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script type="text/javascript" src="data/sectors.js"></script>
+    <script type="text/javascript" src="data/population.js"></script>
+    <script type="text/javascript" src="data/employment.js"></script>
+    <script type="text/javascript" src="data/crime.js"></script>
+    <script type="text/javascript" src="data/kmls.js"></script>
+    <script type="text/javascript" src="data/incomes.js"></script>
+
+    <script type="text/javascript" src="script/community_profile.js"></script>
+    <script type="text/javascript" src="script/user_profile.js"></script>
+
+    <script type="text/javascript" src="script/maps.js"></script>
+    <script type="text/javascript" src="script/crimes.js"></script>
+
+    <script type="text/javascript" src="script/main.js"></script>
+
+
+    <script type="text/javascript">
+      $(function(){
+        $('.search').on('keyup', search);
+        window.search_results_template = Handlebars.compile($('#search-result-template').html());
+        window.population_template = Handlebars.compile($('#population-template').html());
+        window.employment_template = Handlebars.compile($('#employment-template').html());
+        window.income_template = Handlebars.compile($('#income-template').html());
+      });
+    </script>
+
+    <script>
+</script>
+
+  </body>
+</html>

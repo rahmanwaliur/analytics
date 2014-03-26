@@ -68,6 +68,19 @@ app.directive('map', function(){
   };
 });
 
+app.directive('dropdown', function(){
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs){
+      element.attr('data-toggle', 'dropdown');
+
+      element.bind('focus', function(){
+        $('#' + attrs.dropdownId).dropdown('toggle');
+      })
+    }
+  }
+});
+
 app.directive('populationComparison', function(){
 
   return {
@@ -159,7 +172,7 @@ app.directive('crimesComparison', function(){
         .groupSpacing(0.2)    //Distance between each group of bars.
         ;
 
-        chart.yAxis.tickFormat(d3.format('$,d'));
+        chart.yAxis.tickFormat(d3.format(',d'));
 
         var data = _.map(scope.community_profiles, function(community_profile){
           console.log(community_profile.crimes(2012));
@@ -188,21 +201,53 @@ app.directive('crimesComparison', function(){
 });
 
 
-app.controller('CompareController', function($scope, $rootScope, $route){
+app.controller('CompareController', function($scope, $rootScope, $route, $location, communities){
   $rootScope.tab = 'compare';
 
-  $scope.communities_to_compare = $route.current.params.communities_to_compare.split(',');
-  $scope.community_profiles = _.map($scope.communities_to_compare, function(community_name){
-    return new CommunityProfile(community_name, window);
-  });
+  $scope.communities = communities;
 
-  $scope.population_chunk_size = function(){
-    var max_population = _.max(_.map($scope.community_profiles, function(community_profile){
-      return community_profile.population(2011);
-    }));
+  var initCompare = function(){
+    $scope.community_profiles = _.map($scope.communities_to_compare, function(community_name){
+      return new CommunityProfile(community_name, window);
+    });
 
-    return max_population / 50;
+    $scope.population_chunk_size = function(){
+      var max_population = _.max(_.map($scope.community_profiles, function(community_profile){
+        return community_profile.population(2011);
+      }));
+
+      return max_population / 50;
+    };
   };
+
+  if($route.current.params.communities_to_compare){
+    $scope.communities_to_compare = $route.current.params.communities_to_compare.split(',');
+    initCompare();
+  }
+  else{
+    $scope.communities_to_compare = [];
+  }
+
+  $scope.communitySelected = function(community){
+    return _.contains($scope.communities_to_compare, community);
+  }
+
+  var update = function(){
+    $scope.communities_to_compare = _.uniq($scope.communities_to_compare);
+    $location.path( "/compare" + $scope.communities_to_compare.sort());
+  }
+
+  $scope.add_community = function(community){
+    $scope.communities_to_compare.push(community);
+    update();
+  }
+
+  $scope.remove_community = function(community){
+    $scope.communities_to_compare = _.select($scope.communities_to_compare, function(existing_community){
+      return existing_community !== community;
+    });
+    update();
+  }
 
 });
 
