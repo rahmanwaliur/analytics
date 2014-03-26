@@ -23,7 +23,9 @@ var CommunityProfile = (function() {
     return this.employment(year) / this.population(year) * 100;
   }
 
-  __proto__.income = function() {return this.data.income_data[this.name];}
+  __proto__.income = function(year) {
+    return this.data.income_data[this.name]['year_' + year];
+  }
   __proto__.crimes = function() {return this.data.crimes_data[this.name];}
   __proto__.kml_url = function() {return 'http://smsohan.com/analytics/data/kmls/' + this.data.kml_data[this.name] + ".kml";}
 
