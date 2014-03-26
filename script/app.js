@@ -44,7 +44,23 @@ app.directive('populationComparison', function(){
 
   return {
     restrict: 'E',
-    templateUrl: 'population_comparison.html'
+    templateUrl: 'population_comparison.html',
+
+    controller: function($scope){
+      var max_population = _.max(_.map($scope.community_profiles, function(community_profile){
+        return community_profile.population(2011);
+      }));
+
+      var chunkSize = max_population / 50;
+
+      $scope.population_chuncks = function(community_profile){
+        console.dir(community_profile);
+
+        var relativeSize = Math.ceil(community_profile.population(2011) / chunkSize);
+        return new Array(relativeSize);
+      };
+    }
+
   }
 
 });

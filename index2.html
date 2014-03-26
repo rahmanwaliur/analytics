@@ -38,7 +38,6 @@
         </span>
         {{communities_to_compare | join }}
       </h2>
-
       <population_comparison />
     </div>
   </script>
@@ -93,9 +92,23 @@
   </script>
 
   <script type="text/ng-template" id="population_comparison.html">
-    <div ng-repeat="community_profile in community_profiles">
-      {{community_profile.name}}: {{community_profile.population()}}
+    <h3>Population</h3>
+    <div class="row">
+      <div ng-repeat="community_profile in community_profiles">
+        <div class="col-md-2">
+          {{community_profile.name}}
+        </div>
+        <div class="col-md-10">
+          <span ng-repeat="chunck in population_chuncks(community_profile) track by $index" class="glyphicon glyphicon-user population"></span>
+          <div>
+            2009: {{community_profile.population(2009) | number}}
+            2011: {{community_profile.population(2011) | number}}
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
+
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
