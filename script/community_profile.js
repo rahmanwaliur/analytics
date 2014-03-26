@@ -26,7 +26,9 @@ var CommunityProfile = (function() {
   __proto__.income = function(year) {
     return this.data.income_data[this.name]['year_' + year];
   }
-  __proto__.crimes = function() {return this.data.crimes_data[this.name];}
+  __proto__.crimes = function(year) {
+    return this.data.crimes_data[this.name]['year_' + year];
+  }
   __proto__.kml_url = function() {return 'http://smsohan.com/analytics/data/kmls/' + this.data.kml_data[this.name] + ".kml";}
 
 
@@ -58,9 +60,9 @@ var CommunityProfile = (function() {
   };
 
   __proto__._crimes_score = function(){
-    if(!this.crimes() || this.crimes().year_2013 === 0) return 100;
+    if(!this.crimes(2013) || this.crimes(2013).year_2013 === 0) return 100;
 
-    var latestCrimes = this.crimes().year_2013;
+    var latestCrimes = this.crimes(2013).year_2013;
     var latestPopulation = this.population(2011);
 
     var crimesPerPerson = latestCrimes / latestPopulation;

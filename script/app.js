@@ -88,42 +88,70 @@ app.directive('incomeComparison', function(){
         .rotateLabels(0)      //Angle to rotate x-axis labels.
         .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
         .groupSpacing(0.2)    //Distance between each group of bars.
-      ;
+        ;
 
-      chart.xAxis
-          .tickFormat(d3.format('d'));
+        chart.yAxis.tickFormat(d3.format('$,d'));
 
-      chart.yAxis
-          .tickFormat(d3.format(',d'));
-
-      var data = _.map(scope.community_profiles, function(community_profile){
-        return {
-          key: community_profile.name,
-          values: [
-            {x: 2000, y: community_profile.income(2000)},
-            {x: 2005, y: community_profile.income(2005)}
-          ]
-        }
-      });
-
-      d3.select(element[0]).select('svg')
-          .datum(data)
-          .call(chart);
-
-      nv.utils.windowResize(chart.update);
-
-          return chart;
-      });
-
-      //Generate some nice data.
-      function exampleData() {
-        return stream_layers(3,10+Math.random()*100,.1).map(function(data, i) {
+        var data = _.map(scope.community_profiles, function(community_profile){
           return {
-            key: 'Stream #' + i,
-            values: data
-          };
+            key: community_profile.name,
+            values: [
+              {x: 2000, y: community_profile.income(2000)},
+              {x: 2005, y: community_profile.income(2005)}
+            ]
+          }
         });
-      }
+
+        d3.select(element[0]).select('svg')
+            .datum(data)
+            .call(chart);
+
+        nv.utils.windowResize(chart.update);
+        return chart;
+      });
+    }
+
+  }
+
+});
+
+app.directive('crimesComparison', function(){
+
+  return {
+    restrict: 'E',
+    templateUrl: 'crimes_comparison.html',
+
+    link: function(scope, element){
+      nv.addGraph(function() {
+        var chart = nv.models.multiBarChart()
+        .transitionDuration(350)
+        .reduceXTicks(true)   //If 'false', every single x-axis tick label will be rendered.
+        .rotateLabels(0)      //Angle to rotate x-axis labels.
+        .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+        .groupSpacing(0.2)    //Distance between each group of bars.
+        ;
+
+        chart.yAxis.tickFormat(d3.format('$,d'));
+
+        var data = _.map(scope.community_profiles, function(community_profile){
+          console.log(community_profile.crimes(2012));
+
+          return {
+            key: community_profile.name,
+            values: [
+              {x: 2012, y: community_profile.crimes(2012)},
+              {x: 2013, y: community_profile.crimes(2013)}
+            ]
+          }
+        });
+
+        d3.select(element[0]).select('svg')
+            .datum(data)
+            .call(chart);
+
+        nv.utils.windowResize(chart.update);
+        return chart;
+      });
     }
 
   }
