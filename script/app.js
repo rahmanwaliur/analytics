@@ -40,6 +40,34 @@ app.filter('join', function(){
 
 });
 
+app.directive('map', function(){
+  return{
+    restrict: 'E',
+    templateUrl: 'map.html',
+    link: function(scope, element){
+
+      var calgary = new google.maps.LatLng(51.0500,-114.0667);
+      var mapOptions = {
+        zoom: 11,
+        center: calgary
+      }
+
+      var map = new google.maps.Map($('#map-container', element[0])[0], mapOptions);
+
+      _.each(scope.community_profiles, function(community_profile){
+        console.dir(community_profile.kml_url())
+
+        var ctaLayer = new google.maps.KmlLayer({
+          url: community_profile.kml_url(),
+          preserveViewport: true
+        });
+        ctaLayer.setMap(map);
+
+      });
+    }
+  };
+});
+
 app.directive('populationComparison', function(){
 
   return {
@@ -150,6 +178,7 @@ app.directive('crimesComparison', function(){
             .call(chart);
 
         nv.utils.windowResize(chart.update);
+
         return chart;
       });
     }

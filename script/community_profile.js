@@ -24,10 +24,17 @@ var CommunityProfile = (function() {
   }
 
   __proto__.income = function(year) {
-    return this.data.income_data[this.name]['year_' + year];
+    if(this.data.income_data[this.name]){
+      return this.data.income_data[this.name]['year_' + year];
+    };
+
+    return 0;
   }
   __proto__.crimes = function(year) {
-    return this.data.crimes_data[this.name]['year_' + year];
+    if(this.data.crimes_data[this.name]){
+      return this.data.crimes_data[this.name]['year_' + year];
+    }
+    return 0;
   }
   __proto__.kml_url = function() {return 'http://smsohan.com/analytics/data/kmls/' + this.data.kml_data[this.name] + ".kml";}
 
