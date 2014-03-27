@@ -261,6 +261,7 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
   $scope.match = function(){
     $scope.user_profile = new UserProfile($scope);
     $scope.ranked_communities = $scope.user_profile.rankedCommunities(communities, 10);
+    console.dir($scope.ranked_communities);
   };
 
   $scope.select_community = function (community) {

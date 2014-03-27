@@ -12,7 +12,7 @@ var CommunityProfile = (function() {
     if(this.data.population_data[this.name]['' + year]){
       return parseInt(this.data.population_data[this.name]['' + year].population, 10);
     }
-    return NaN;
+    return 0;
   }
 
   __proto__.employment = function(year) {
@@ -71,6 +71,10 @@ var CommunityProfile = (function() {
 
     var latestCrimes = this.crimes(2013).year_2013;
     var latestPopulation = this.population(2011);
+
+    if(!latestCrimes) return 100;
+
+    console.log("latestCrimes / latestPopulation;" + latestCrimes + " " + latestPopulation);
 
     var crimesPerPerson = latestCrimes / latestPopulation;
     return 100 - crimesPerPerson;
