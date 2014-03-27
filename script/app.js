@@ -68,6 +68,16 @@ app.directive('map', function(){
   };
 });
 
+app.directive('ranks', function(){
+  return{
+    restrict: 'E',
+    templateUrl: 'ranks_comparison.html',
+    link: function(){
+      console.dir("HERE");
+    }
+  };
+});
+
 app.directive('dropdown', function(){
   return {
     restrict: 'A',

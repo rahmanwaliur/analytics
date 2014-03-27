@@ -1,3 +1,10 @@
+body{
+  font-family: 'Montserrat';
+/*  background-color: #9b59b6;
+  color: #ecf0f1;
+*/
+}
+
 .glyphicon{
   letter-spacing: 0.1em;
 }
@@ -36,10 +43,24 @@
 .population-growth .number{
   font-size: 1.3em;
 }
-.population-growth .glyphicon-arrow-up,.population-growth .growth{
+.population-growth .glyphicon-arrow-up,.population-growth .growth, .top-rank{
   color: green;
 }
 
 .population-growth .glyphicon-arrow-down,.population-growth .negative-growth{
   color: #c0392b;
+}
+
+.card{
+  padding: 20px;
+  margin: 30px 0;
+  background-color: #fff;
+}
+
+.card h3{
+  text-transform: uppercase;
+}
+
+.rank{
+  font-size: 1.3em;
 }

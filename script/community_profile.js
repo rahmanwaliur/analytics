@@ -136,6 +136,10 @@ var CommunityProfile = (function() {
     return this.population_growth() > 0;
   }
 
+  __proto__.avenue_rank = function(){
+    return this.data.avenue_ranks[this.name];
+  };
+
   return CommunityProfile;
 
 })();
