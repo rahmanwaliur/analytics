@@ -200,6 +200,37 @@ app.directive('crimesComparison', function(){
 
 });
 
+app.directive('ownershipComparison', function(){
+
+  return {
+    restrict: 'E',
+    templateUrl: 'ownership_comparison.html',
+
+    link: function(scope){
+
+      var max_dwells = _.max(_.map(scope.community_profiles, function(community_profile){
+        return community_profile.ownership().total;
+      }));
+
+      var chunk_size = (max_dwells > 40) ? max_dwells / 40 : max_dwells;
+
+      scope.own_chunks = function(community_profile){
+        var count = Math.ceil(community_profile.ownership().own / chunk_size);
+        return new Array(count);
+      };
+
+      scope.rent_chunks = function(community_profile){
+        var count = Math.ceil((community_profile.ownership().total - community_profile.ownership().own) / chunk_size);
+        return new Array(count);
+      }
+
+    }
+
+  };
+
+});
+
+
 
 app.controller('CompareController', function($scope, $rootScope, $route, $location, communities){
   $rootScope.tab = 'compare';

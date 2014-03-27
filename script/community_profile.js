@@ -39,6 +39,9 @@ var CommunityProfile = (function() {
   __proto__.kml_url = function() {return 'http://smsohan.com/analytics/data/kmls/' + this.data.kml_data[this.name] + ".kml";}
 
 
+  __proto__.ownership = function() {return this.data.ownership_data[this.name];}
+  __proto__.ownership_percent = function() {return this.ownership().own / this.ownership().total * 100;}
+
   __proto__.score = function(user_profile){
     var income_score = this._income_similarity(user_profile.income);
     var crime_score =  this._crimes_score();
