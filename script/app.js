@@ -86,10 +86,14 @@ app.directive('populationComparison', function(){
   return {
     restrict: 'E',
     templateUrl: 'population_comparison.html',
-
     controller: function($scope){
-      $scope.population_chuncks = function(community_profile){
-        var relativeSize = Math.ceil(community_profile.population(2011) / $scope.population_chunk_size());
+      $scope.male_chuncks = function(community_profile){
+        var relativeSize = Math.ceil(community_profile.males() / $scope.population_chunk_size());
+        return new Array(relativeSize);
+      };
+
+      $scope.female_chuncks = function(community_profile){
+        var relativeSize = Math.ceil(community_profile.females() / $scope.population_chunk_size());
         return new Array(relativeSize);
       };
     }

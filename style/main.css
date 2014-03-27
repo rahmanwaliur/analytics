@@ -20,3 +20,15 @@
 .rent {
   opacity: 0.4;
 }
+
+.age-distribution .max{
+  font-weight: bold;
+}
+
+.population.male{
+  color: #3498db;
+}
+
+.population.female, .percent.female{
+  color: hotpink;
+}

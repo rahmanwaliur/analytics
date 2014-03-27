@@ -135,20 +135,37 @@
           {{community_profile.name}}
         </div>
         <div class="col-md-10">
-          <span ng-repeat="chunck in population_chuncks(community_profile) track by $index" class="glyphicon glyphicon-user population"></span>
+          <span ng-repeat="chunck in female_chuncks(community_profile) track by $index" class="glyphicon glyphicon-user population female"></span>
+          <span ng-repeat="chunck in male_chuncks(community_profile) track by $index" class="glyphicon glyphicon-user population male"></span>
+
           <div>
-            2009: {{community_profile.population(2009) | number}}
-            2011: {{community_profile.population(2011) | number}}
-            {{community_profile.population(2011) - community_profile.population(2009) | number}}
+            <span class="female percent">{{community_profile.female_percentage() | number:0}}% Females</span> out of
+            <strong>{{community_profile.population(2011) | number}}</strong> residents as per 2011 census
           </div>
-          <div>
+          <div class="age-distribution">
             Age distribution:
-            0-19: {{community_profile.age_distribution_percentage().under_20 | number:0}}%
-            20-64: {{community_profile.age_distribution_percentage().under_65 | number:0}}%
-            65+: {{community_profile.age_distribution_percentage().over_65 | number:0}}%
+            <span ng-class="{max: community_profile.has_max_distribution_percentage('under_20')}"> 0-19: {{community_profile.age_distribution_percentage().under_20 | number:0}}%</span>
+            <span ng-class="{max: community_profile.has_max_distribution_percentage('under_65')}"> 20-64: {{community_profile.age_distribution_percentage().under_65 | number:0}}%</span>
+            <span ng-class="{max: community_profile.has_max_distribution_percentage('over_65')}">65+: {{community_profile.age_distribution_percentage().over_65 | number:0}}%</span>
           </div>
         </div>
         <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <h3>Population Growth</h3>
+    <div class="row">
+      <div class="profile-row" ng-repeat="community_profile in community_profiles">
+        <div class="col-md-2">
+          {{community_profile.name}}
+        </div>
+        <div class="col-md-10">
+          <div>
+            <span class="glyphicon" ng-class="{'glyphicon-plus': community_profile.is_population_growing(), 'glyphicon-minus': !community_profile.is_population_growing()}">
+              {{community_profile.population_growth() | number}}
+            </span> between 2009 &rarr; 2011
+          </div>
+        </div>
       </div>
     </div>
   </script>
@@ -231,6 +248,7 @@
   <script type="text/javascript" src="data/incomes.js"></script>
   <script type="text/javascript" src="data/dwells.js"></script>
   <script type="text/javascript" src="data/ages.js"></script>
+  <script type="text/javascript" src="data/genders.js"></script>
 
   <script type="text/javascript" src="script/community_profile.js"></script>
   <script type="text/javascript" src="script/user_profile.js"></script>

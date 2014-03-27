@@ -54,7 +54,25 @@ var CommunityProfile = (function() {
       over_65: (distribution.MF_65_74 + distribution.MF_75) / total * 100
     };
 
-  }
+  };
+
+  __proto__.age_distribution_max = function(){
+    var max_group = null;
+    var max_percentage = 0;
+
+    _.each(this.age_distribution_percentage(), function(percentage, key){
+      if(max_percentage < percentage){
+        max_group = key;
+        max_percentage = percentage;
+      }
+    })
+
+    return max_group;
+  };
+
+  __proto__.has_max_distribution_percentage = function(age_group){
+    return this.age_distribution_max() === age_group;
+  };
 
 
   __proto__.score = function(user_profile){
@@ -97,6 +115,26 @@ var CommunityProfile = (function() {
     var crimesPerPerson = latestCrimes / latestPopulation;
     return 100 - crimesPerPerson;
   };
+
+  __proto__.males = function(){
+    return this.data.genders[this.name]['MALE'];
+  };
+
+  __proto__.females = function(){
+    return this.data.genders[this.name]['FEMALE'];
+  };
+
+  __proto__.female_percentage = function(){
+    return this.females() / this.population(2011) * 100;
+  };
+
+  __proto__.population_growth = function(){
+    return this.population(2011) - this.population(2009);
+  }
+
+  __proto__.is_population_growing = function(){
+    return this.population_growth() > 0;
+  }
 
   return CommunityProfile;
 
