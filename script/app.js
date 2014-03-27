@@ -240,6 +240,7 @@ app.controller('CompareController', function($scope, $rootScope, $route, $locati
   $rootScope.tab = 'compare';
 
   $scope.communities = communities;
+  $scope.Math = window.Math;
 
   var initCompare = function(){
     $scope.community_profiles = _.map($scope.communities_to_compare, function(community_name){

@@ -32,3 +32,14 @@
 .population.female, .percent.female{
   color: hotpink;
 }
+
+.population-growth .number{
+  font-size: 1.3em;
+}
+.population-growth .glyphicon-arrow-up,.population-growth .growth{
+  color: green;
+}
+
+.population-growth .glyphicon-arrow-down,.population-growth .negative-growth{
+  color: #c0392b;
+}

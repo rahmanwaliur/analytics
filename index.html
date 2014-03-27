@@ -155,15 +155,31 @@
 
     <h3>Population Growth</h3>
     <div class="row">
-      <div class="profile-row" ng-repeat="community_profile in community_profiles">
+      <div class="profile-row population-growth" ng-repeat="community_profile in community_profiles">
         <div class="col-md-2">
           {{community_profile.name}}
         </div>
         <div class="col-md-10">
-          <div>
-            <span class="glyphicon" ng-class="{'glyphicon-plus': community_profile.is_population_growing(), 'glyphicon-minus': !community_profile.is_population_growing()}">
-              {{community_profile.population_growth() | number}}
-            </span> between 2009 &rarr; 2011
+          <div class="row">
+            <div class="col-md-2">
+              <span class="glyphicon" ng-class="{'glyphicon-arrow-up': community_profile.is_population_growing(), 'glyphicon-arrow-down': !community_profile.is_population_growing()}">
+              </span>
+              <strong class="number" ng-class="{growth: community_profile.is_population_growing(), 'negative-growth': !community_profile.is_population_growing()}">{{Math.abs(community_profile.population_growth()) | number}}</strong>
+            </div>
+
+            <div class="col-md-10">
+              <strong>
+                <span ng-if="community_profile.is_population_growing()">
+                  more
+                </span>
+
+                <span ng-if="!community_profile.is_population_growing()">
+                  less
+                </span>
+              </strong>
+
+              people between 2009 &rarr; 2011
+            </div>
           </div>
         </div>
       </div>
