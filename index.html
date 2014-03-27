@@ -130,7 +130,13 @@
           <div>
             2009: {{community_profile.population(2009) | number}}
             2011: {{community_profile.population(2011) | number}}
-            {{community_profile.population(2011) - community_profile.population(2009)}}
+            {{community_profile.population(2011) - community_profile.population(2009) | number}}
+          </div>
+          <div>
+            Age distribution:
+            0-19: {{community_profile.age_distribution_percentage().under_20 | number:2}}%
+            20-64: {{community_profile.age_distribution_percentage().under_65 | number:2}}%
+            65+: {{community_profile.age_distribution_percentage().over_65 | number:2}}%
           </div>
         </div>
         <div class="clearfix"></div>
@@ -214,6 +220,7 @@
   <script type="text/javascript" src="data/kmls.js"></script>
   <script type="text/javascript" src="data/incomes.js"></script>
   <script type="text/javascript" src="data/dwells.js"></script>
+  <script type="text/javascript" src="data/ages.js"></script>
 
   <script type="text/javascript" src="script/community_profile.js"></script>
   <script type="text/javascript" src="script/user_profile.js"></script>

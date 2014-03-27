@@ -42,6 +42,21 @@ var CommunityProfile = (function() {
   __proto__.ownership = function() {return this.data.ownership_data[this.name];}
   __proto__.ownership_percent = function() {return this.ownership().own / this.ownership().total * 100;}
 
+  __proto__.age_distribution = function(){ return this.data.age_data[this.name];}
+
+  __proto__.age_distribution_percentage = function(){
+    var total = this.population(2011);
+    var distribution = this.age_distribution();
+
+    return {
+      under_20: (distribution.MF_0_4 + distribution.MF_5_14 + distribution.MF_15_19) / total * 100,
+      under_65: (distribution.MF_20_24 + distribution.MF_25_34 + distribution.MF_35_44 + distribution.MF_45_54 + distribution.MF_55_64) / total * 100,
+      over_65: (distribution.MF_65_74 + distribution.MF_75) / total * 100
+    };
+
+  }
+
+
   __proto__.score = function(user_profile){
     var income_score = this._income_similarity(user_profile.income);
     var crime_score =  this._crimes_score();
