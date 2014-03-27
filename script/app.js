@@ -2,7 +2,7 @@ var app = angular.module('community', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider){
 
-  $routeProvider.when('/compare:communities_to_compare?', {
+  $routeProvider.when('/compare/:communities_to_compare?', {
     templateUrl: 'compare.html',
     controller: 'CompareController'
   });
@@ -234,7 +234,7 @@ app.controller('CompareController', function($scope, $rootScope, $route, $locati
 
   var update = function(){
     $scope.communities_to_compare = _.uniq($scope.communities_to_compare);
-    $location.path( "/compare" + $scope.communities_to_compare.sort());
+    $location.path( "/compare/" + $scope.communities_to_compare.sort());
   }
 
   $scope.add_community = function(community){
@@ -259,9 +259,10 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
   $scope.compare_disabled = true;
 
   $scope.match = function(){
+    $scope.finding = true;
+    $scope.button_text = 'Finding Communities..';
     $scope.user_profile = new UserProfile($scope);
     $scope.ranked_communities = $scope.user_profile.rankedCommunities(communities, 10);
-    console.dir($scope.ranked_communities);
   };
 
   $scope.select_community = function (community) {
@@ -273,6 +274,6 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
     var communities_to_compare = _.map($scope.compare_communities, function(ranked_community){
       return ranked_community.community_profile.name;
     });
-    $location.path( "/compare" + communities_to_compare.sort());
+    $location.path( "/compare/" + communities_to_compare.sort());
   };
 });
