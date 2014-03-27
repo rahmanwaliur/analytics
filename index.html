@@ -32,34 +32,43 @@
 
 
   <script type="text/ng-template" id="compare.html">
-    <form role="form">
-      <h3>Select Communities</h3>
+    <div class="row">
+      <div class="col-md-8">
+        <form role="form">
+          <h3>Find a Community</h3>
+          <div class="form-group dropdown" >
+            <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities"/>
+            <div class="row clearfix">
+              <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)">{{community}}</a></li>
+              </ul>
+            </div>
+          </div>
 
-      <div class="checkbox" ng-repeat="community in communities_to_compare">
-        <label>
-          <input type="checkbox" checked ng-click="remove_community(community)"> {{community}}
-        </label>
-      </div>
-
-      <div class="form-group container-fluid dropdown" >
-        <label for="community">Find a Community</label>
-        <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities"/>
-        <div class="row clearfix">
-          <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)">{{community}}</a></li>
+          <h3>Select Communities</h3>
+          <ul class="list-inline">
+            <li ng-repeat="community in communities_to_compare">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked ng-click="remove_community(community)"> {{community}}
+                </label>
+              </div>
+            </li>
           </ul>
-        </div>
+
+        </form>
       </div>
 
-    </form>
+      <div class="col-md-4"></div>
+    </div>
 
     <div ng-if="communities_to_compare">
-      <h2>
+      <h3>
         <span ng-if="communities_to_compare.length > 1">
           Comparing
         </span>
         {{communities_to_compare | join }}
-      </h2>
+      </h3>
       <map></map>
       <population_comparison></population_comparison>
       <employment_comparison></employment_comparison>
