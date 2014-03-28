@@ -13,41 +13,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body ng-app="community" class="row">
-  <div class="col-md-1"></div>
+<body ng-app="community">
+  <div class="row">
+    <div class="col-md-1"></div>
 
-  <div class="col-md-10">
+    <div class="col-md-10">
 
-    <div class="jumbotron">
-      <div class="text">
-        <h1>Calgary Communities</h1>
-        <h3>Grow with yours!</h3>
+      <div class="jumbotron">
+        <div class="text">
+          <h1>Calgary Communities</h1>
+          <h3>Grow with yours!</h3>
+        </div>
       </div>
+
+      <div class="clearfix"></div>
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-8 col-xs-4 col-xs-offset-4">
+          <facebook></facebook>
+        </div>
+        <div class="col-md-2 col-xs-4">
+          <twitter></twitter>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <ul class="nav nav-tabs">
+        <li ng-class="{active: tab == 'match'}"><a href="#!/match">Match</a></li>
+        <li ng-class="{active: tab == 'compare'}"><a href="#!/compare/">Compare</a></li>
+      </ul>
+
+      <div ng-view></div>
+
     </div>
 
-    <div class="clearfix"></div>
-
-    <div class="row">
-      <div class="col-md-2 col-md-offset-8 col-xs-4 col-xs-offset-4">
-        <facebook></facebook>
-      </div>
-      <div class="col-md-2 col-xs-4">
-        <twitter></twitter>
-      </div>
-    </div>
-
-    <div class="clearfix"></div>
-
-    <ul class="nav nav-tabs">
-      <li ng-class="{active: tab == 'match'}"><a href="#!/match">Match</a></li>
-      <li ng-class="{active: tab == 'compare'}"><a href="#!/compare/">Compare</a></li>
-    </ul>
-
-    <div ng-view></div>
-
+    <div class="col-md-1"></div>
   </div>
 
-  <div class="col-md-1"></div>
+  <div class="row well footer">
+    <div class="col-md-10 col-md-offset-1">
+      <h4>Disclaimer</h4>
+      <p>
+        The data used in this web site is collected from various publicly available data sources. This is created as a project for
+        my graduate program. While effort has been made to keep it accurate, no guarantee is provided about the correctness
+        of the data that is displayed here.
+      </p>
+
+      <h4>Reference Data Sources</h4>
+      <ol>
+        <li><a href="https://data.calgary.ca/OpenData/Pages/DatasetListingAlphabetical.aspx">Calgary Open Data Catalogue</a></li>
+        <li><a href="http://www.calgary.ca/cps/Pages/Statistics/Calgary-Police-statistical-reports.aspx">Calgary Police statistical reports</a></li>
+        <li><a href="http://www.calgary.ca/CSPS/CNS/Pages/Research-and-strategy/Community-profiles/Community-Profiles.aspx">Calgary Community Profiles</a></li>
+      </ol>
+
+      <h4>Contact Information</h4>
+      <p>
+        Please visit <a href="http://smsohan.com/home/">http://smsohan.com/home/</a> to contact with me.
+      </p>
+    </div>
+  </div>
 
 
   <script type="text/ng-template" id="compare.html">
