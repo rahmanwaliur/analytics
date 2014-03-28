@@ -48,6 +48,14 @@ var CommunityProfile = (function() {
     var total = this.population(2011);
     var distribution = this.age_distribution();
 
+    if(!distribution){
+      return {
+        under_20: 0,
+        under_65: 0,
+        over_65: 0
+      };
+    }
+
     return {
       under_20: (distribution.MF_0_4 + distribution.MF_5_14 + distribution.MF_15_19) / total * 100,
       under_65: (distribution.MF_20_24 + distribution.MF_25_34 + distribution.MF_35_44 + distribution.MF_45_54 + distribution.MF_55_64) / total * 100,
@@ -76,22 +84,26 @@ var CommunityProfile = (function() {
 
 
   __proto__.score = function(user_profile){
-    var income_score = this._income_similarity(user_profile.income);
+    var income_score = this._income_similarity(parseInt(user_profile.income, 10));
     var crime_score =  this._crimes_score();
     var sector_score = this._sector_similarity(user_profile.preferred_sectors);
-
+    var family_score = this._family_score(user_profile.family_type);
+    var avenue_score = this._avenue_score();
     return {
-      total_score: income_score + crime_score + sector_score,
+      total_score: income_score + crime_score + sector_score + family_score + avenue_score,
       income_score: income_score,
       crime_score: crime_score,
-      sector_score: sector_score
+      sector_score: sector_score,
+      family_score: family_score,
+      avenue_score: avenue_score
     };
   };
 
   __proto__._income_similarity = function(user_income){
-    if(!user_income || !this.income() || this.income() === 0) return 0;
+    var community_income2005 = this.income(2005);
 
-    var community_income2005 = this.income().year_2005;
+    if(!user_income || !community_income2005 || community_income2005 === 0) return 0;
+
 
     return 100 - Math.abs( community_income2005 - user_income) * 100.0 / community_income2005;
   };
@@ -110,11 +122,32 @@ var CommunityProfile = (function() {
 
     if(!latestCrimes) return 100;
 
-    console.log("latestCrimes / latestPopulation;" + latestCrimes + " " + latestPopulation);
-
     var crimesPerPerson = latestCrimes / latestPopulation;
-    return 100 - crimesPerPerson;
+    return 100 - crimesPerPerson * 5;
   };
+
+  __proto__._family_score = function(family_type){
+    var ages = this.age_distribution_percentage();
+    if(family_type == 'children'){
+      return 100 - Math.abs(15, ages.under_20);
+    }
+
+    if(family_type == 'adults'){
+      return 100 - Math.abs(60, ages.under_65);
+    }
+
+    if(family_type == 'retired'){
+      return 100 - Math.abs(12, ages.over_65);
+    }
+  };
+
+  __proto__._avenue_score = function(){
+    if(!this.avenue_rank()){
+      return 0;
+    }
+
+    return (100 - this.avenue_rank()) / 10;
+  }
 
   __proto__.males = function(){
     return this.data.genders[this.name]['MALE'];

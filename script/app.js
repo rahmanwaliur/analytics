@@ -69,8 +69,6 @@ app.directive('map', function(){
       var map = new google.maps.Map($('#map-container', element[0])[0], mapOptions);
 
       _.each(scope.community_profiles, function(community_profile){
-        console.dir(community_profile.kml_url())
-
         var ctaLayer = new google.maps.KmlLayer({
           url: community_profile.kml_url(),
           preserveViewport: true
@@ -323,6 +321,8 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
     $scope.button_text = 'Finding Communities..';
     $scope.user_profile = new UserProfile($scope);
     $scope.ranked_communities = $scope.user_profile.rankedCommunities(communities, 10);
+
+    console.dir($scope.ranked_communities);
   };
 
   $scope.select_community = function (community) {
