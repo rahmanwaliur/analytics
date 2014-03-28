@@ -22,6 +22,7 @@ body{
 .search{
   display: block;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 .rent {

@@ -40,6 +40,13 @@ app.filter('join', function(){
 
 });
 
+app.directive('facebook', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'facebook.html'
+  }
+});
+
 app.directive('map', function(){
   return{
     restrict: 'E',

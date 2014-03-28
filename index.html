@@ -23,6 +23,10 @@
       <h3>Grow with yours!</h3>
     </div>
 
+    <div class="pull-right">
+      <facebook></facebook>
+    </div>
+
     <ul class="nav nav-tabs">
       <li ng-class="{active: tab == 'match'}"><a href="#!/match">Match</a></li>
       <li ng-class="{active: tab == 'compare'}"><a href="#!/compare/">Compare</a></li>
@@ -36,12 +40,11 @@
 
 
   <script type="text/ng-template" id="compare.html">
-    <div class="row">
+    <div class="row profile-row">
       <div class="col-md-8">
         <form role="form">
-          <h3>Find a Community</h3>
           <div class="form-group dropdown" >
-            <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities"/>
+            <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities" placeholder="Find a Community..."/>
             <div class="row clearfix">
               <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)">{{community}}</a></li>
@@ -277,6 +280,20 @@
       </div>
     </div>
   </script>
+
+
+  <script type="text/ng-template" id="facebook.html">
+    <div id="fb-root"></div>
+    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
+  </script>
+
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=275316532534704";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
