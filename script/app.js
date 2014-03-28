@@ -47,6 +47,13 @@ app.directive('facebook', function(){
   }
 });
 
+app.directive('twitter', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'twitter.html'
+  }
+});
+
 app.directive('map', function(){
   return{
     restrict: 'E',
