@@ -279,7 +279,7 @@ app.controller('CompareController', function($scope, $rootScope, $route, $locati
   };
 
   if($route.current.params.communities_to_compare){
-    $scope.communities_to_compare = $route.current.params.communities_to_compare.split(',');
+    $scope.communities_to_compare = $route.current.params.communities_to_compare.replace(/_/g, '/').split(',');
     initCompare();
   }
   else{
@@ -334,6 +334,20 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
     var communities_to_compare = _.map($scope.compare_communities, function(ranked_community){
       return ranked_community.community_profile.name;
     });
-    $location.path( "/compare/" + communities_to_compare.sort());
+
+    var sanitized_names = _.map(communities_to_compare, function(community){
+      return community.replace(/\//g, '_');
+    });
+
+    $location.path( "/compare/" + sanitized_names.sort());
   };
+
+  $scope.select_all = function(){
+    _.each($scope.ranked_communities, function(ranked_community){
+      ranked_community.selected = true;
+    });
+
+    $scope.compare_communities = $scope.ranked_communities;
+    $scope.compare_disabled = false;
+  }
 });

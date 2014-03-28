@@ -80,7 +80,7 @@
       <div class="col-md-8">
         <form role="form">
           <div class="form-group dropdown" >
-            <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities" placeholder="Find a Community..."/>
+            <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities" placeholder="Select a Community to Compare..."/>
             <div class="row clearfix">
               <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)">{{community}}</a></li>
@@ -88,16 +88,20 @@
             </div>
           </div>
 
-          <h3>Select Communities</h3>
-          <ul class="list-inline">
-            <li ng-repeat="community in communities_to_compare">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" checked ng-click="remove_community(community)"> {{community}}
-                </label>
-              </div>
-            </li>
-          </ul>
+          <div ng-if="communities_to_compare">
+
+            <h3>Select Communities</h3>
+            <ul class="list-inline">
+              <li ng-repeat="community in communities_to_compare">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" checked ng-click="remove_community(community)"> {{community}}
+                  </label>
+                </div>
+              </li>
+            </ul>
+
+          </div>
 
         </form>
       </div>
@@ -173,6 +177,7 @@
       <h2 >Top {{ranked_communities.length}} Matching Communities</h2>
 
       <form role="form" ng-submit="compare()">
+        <a ng-click="select_all()">Select All</a>
 
         <div class="checkbox" ng-repeat="community in ranked_communities">
           <label>
@@ -281,7 +286,7 @@
           <span ng-repeat="chunk in own_chunks(community_profile) track by $index" class="glyphicon glyphicon-home"></span>
           <span ng-repeat="chunk in rent_chunks(community_profile) track by $index" class="glyphicon glyphicon-home rent"></span>
           <div>
-            {{community_profile.ownership_percent() | number:2}}% Owners ({{community_profile.ownership().own | number}}/{{community_profile.ownership().total | number}})
+            {{community_profile.ownership_percent() | number:0}}% Owners ({{community_profile.ownership().own | number}}/{{community_profile.ownership().total | number}})
           </div>
         </div>
         <div class="clearfix"></div>
