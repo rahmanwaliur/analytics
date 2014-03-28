@@ -127,6 +127,8 @@ var CommunityProfile = (function() {
   };
 
   __proto__._family_score = function(family_type){
+    if(!family_type) {return 100;}
+
     var ages = this.age_distribution_percentage();
     if(family_type == 'children'){
       return 100 - Math.abs(15, ages.under_20);
