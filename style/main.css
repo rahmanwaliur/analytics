@@ -65,3 +65,14 @@ body{
 .rank{
   font-size: 1.3em;
 }
+
+.jumbotron{
+  background-image: url('../images/cover.jpg');
+}
+
+.jumbotron .text{
+  background-color: #333;
+  opacity: 0.8;
+  color: white;
+  padding: 30px;
+}
