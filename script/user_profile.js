@@ -5,7 +5,18 @@ var UserProfile = (function(){
     _.extend(this, options);
   }
 
+
   var __proto__ = UserProfile.prototype;
+
+  __proto__.preferred_sectors = function(){
+    if(!this.sectors || this.sectors.length === 0 ) return [];
+
+    var selected = _.filter(this.sectors, function(sector){
+      return sector.selected;
+    });
+
+    return _.pluck(selected, 'name');
+  };
 
   __proto__.rankedCommunities = function(communities, limit){
 

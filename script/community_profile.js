@@ -86,7 +86,7 @@ var CommunityProfile = (function() {
   __proto__.score = function(user_profile){
     var income_score = this._income_similarity(parseInt(user_profile.income, 10));
     var crime_score =  this._crimes_score();
-    var sector_score = this._sector_similarity(user_profile.preferred_sectors);
+    var sector_score = this._sector_similarity(user_profile.preferred_sectors());
     var family_score = this._family_score(user_profile.family_type);
     var avenue_score = this._avenue_score();
     return {
@@ -131,15 +131,15 @@ var CommunityProfile = (function() {
 
     var ages = this.age_distribution_percentage();
     if(family_type == 'children'){
-      return 100 - Math.abs(15, ages.under_20);
+      return 100 - Math.abs(35, ages.under_20);
     }
 
     if(family_type == 'adults'){
-      return 100 - Math.abs(60, ages.under_65);
+      return 100 - Math.abs(80, ages.under_65);
     }
 
     if(family_type == 'retired'){
-      return 100 - Math.abs(12, ages.over_65);
+      return 100 - Math.abs(30, ages.over_65);
     }
   };
 

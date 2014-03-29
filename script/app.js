@@ -20,7 +20,7 @@ app.factory('communities', function(){
 });
 
 app.factory('sectors', function(){
-  return _.uniq(_.values(sector_data));
+  return (_.uniq(_.values(sector_data))).sort();
 });
 
 app.filter('join', function(){
@@ -313,7 +313,9 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
   $rootScope.tab = 'match';
   $scope.user_profile = new UserProfile($scope);
   $scope.ranked_communities = [];
-  $scope.sectors = sectors;
+  $scope.sectors = _.map(sectors, function(sector){
+    return {name: sector, selected: false};
+  });;
   $scope.compare_disabled = true;
 
   $scope.match = function(){

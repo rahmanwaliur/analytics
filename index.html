@@ -164,12 +164,12 @@
       </div>
 
       <div class="form-group">
-        <label for="preferred_sectors">Preferred City Sectors</label>
-        <select multiple ng-model="preferred_sectors" class="form-control" id="preferred_sectors">
-          <option ng-repeat="sector in sectors" value="{{sector}}">
-            {{sector}}
-          </option>
-        </select>
+        <label>Preferred City Sectors</label>
+        <div class="checkbox" ng-repeat="sector in sectors">
+          <label>
+            <input type="checkbox" ng-model="sector.selected"> {{sector.name}}
+          </label>
+        </div>
       </div>
       <button type="submit" class="btn btn-default btn-primary">Find Communities</button>
     </form>
@@ -186,7 +186,7 @@
           </label>
         </div>
 
-        <button type="submit" class="btn btn-default" ng-disabled="compare_disabled">Compare</button>
+        <button type="submit" class="btn btn-default btn-primary" ng-disabled="compare_disabled">Compare</button>
       </form>
     </div>
   </script>
