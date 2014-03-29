@@ -85,7 +85,6 @@ app.directive('ranks', function(){
     restrict: 'E',
     templateUrl: 'ranks_comparison.html',
     link: function(){
-      console.dir("HERE");
     }
   };
 });
@@ -201,7 +200,6 @@ app.directive('crimesComparison', function(){
         chart.yAxis.tickFormat(d3.format(',d'));
 
         var data = _.map(scope.community_profiles, function(community_profile){
-          console.log(community_profile.crimes(2012));
 
           return {
             key: community_profile.name,
@@ -324,7 +322,6 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
     $scope.user_profile = new UserProfile($scope);
     $scope.ranked_communities = $scope.user_profile.rankedCommunities(communities, 10);
 
-    console.dir($scope.ranked_communities);
   };
 
   $scope.select_community = function (community) {
