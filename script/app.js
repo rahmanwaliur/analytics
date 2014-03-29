@@ -1,4 +1,4 @@
-var app = angular.module('community', ['ngRoute']);
+var app = angular.module('community', ['ngRoute', 'angulartics', 'angulartics.google.analytics']);
 
 app.config(function($routeProvider, $locationProvider){
 

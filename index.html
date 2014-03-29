@@ -83,7 +83,7 @@
             <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities" placeholder="Select a Community to Compare..."/>
             <div class="row clearfix">
               <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)">{{community}}</a></li>
+                <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)" analytics-on="click" analytics-event="SearchResult">{{community}}</a></li>
               </ul>
             </div>
           </div>
@@ -171,7 +171,7 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-default btn-primary">Find Communities</button>
+      <button type="submit" class="btn btn-default btn-primary" analytics-on="click" analytics-event="Match">Find Communities</button>
     </form>
 
     <div ng-if="ranked_communities">
@@ -186,7 +186,7 @@
           </label>
         </div>
 
-        <button type="submit" class="btn btn-default btn-primary" ng-disabled="compare_disabled">Compare</button>
+        <button type="submit" class="btn btn-default btn-primary" ng-disabled="compare_disabled" analytics-on="click" analytics-event="Compare">Compare</button>
       </form>
     </div>
   </script>
@@ -356,7 +356,11 @@
   <script type="text/javascript" src="script/maps.js"></script>
   <script type="text/javascript" src="script/crimes.js"></script>
 
+  <script type="text/javascript" src="script/angulartics.min.js"></script>
+  <script type="text/javascript" src="script/angulartics-ga.min.js"></script>
+
   <script src="script/app.js"></script>
+
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -364,7 +368,6 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-49479951-1', 'loveyyc.info');
-  ga('send', 'pageview');
   </script>
 </body>
 </html>
