@@ -106,12 +106,26 @@ describe('match page', function() {
 
   });
 
+  describe('active tab', function(){
+    it('sets the match as an active tab', function(){
+      expect($('.nav .active a').getText()).toEqual('Match');
+    });
+  });
+
+  describe('routes', function(){
+    it('renders the Match tab if url has #!/match', function(){
+      browser.get('http://localhost:8000/#!/match');
+      expect($('.nav .active a').getText()).toEqual('Match');
+
+    });
+  });
+
   describe('sector select', function(){
     it('selects CENTER', function(){
       match_page.select_sector('CENTRE');
       match_page.click_button('Find');
 
-      ptor.sleep(3000);
+      ptor.sleep(5000);
 
       match_page.select_all();
       match_page.click_button('Compare');
