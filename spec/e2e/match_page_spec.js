@@ -125,9 +125,9 @@ describe('match page', function() {
       match_page.select_sector('CENTRE');
       match_page.click_button('Find');
 
-      ptor.sleep(10000);
-
+      ptor.sleep(5000);
       match_page.select_all();
+      ptor.sleep(2000);
       match_page.click_button('Compare');
 
       expect(browser.getCurrentUrl()).toContain('#!/compare');
