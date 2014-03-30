@@ -16,3 +16,21 @@ describe('join', function(){
   }));
 
 });
+
+describe('sanitize_name', function(){
+  beforeEach(module('community'));
+
+  it('returns blank if input is blank', inject(function(sanitize_nameFilter){
+    expect(sanitize_nameFilter([])).toEqual([]);
+  }));
+
+  it('returns sanitized if contains "/"', inject(function(sanitize_nameFilter){
+    expect(sanitize_nameFilter(['AB/CD'])).toEqual(['AB_CD']);
+  }));
+
+  it('returns original if doesnt contain "/"', inject(function(sanitize_nameFilter){
+    expect(sanitize_nameFilter(['AB CD'])).toEqual(['AB CD']);
+  }));
+
+
+});
