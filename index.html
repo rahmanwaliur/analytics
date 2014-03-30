@@ -83,7 +83,8 @@
             <input type="text" class="form-control search" ng-model="community_to_add" dropdown data-dropdown-id="matching_communities" placeholder="Select a Community to Compare..."/>
             <div class="row clearfix">
               <ul id="matching_communities" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation" ng-repeat="community in communities| filter:community_to_add"><a role="menuitem" tabindex="-1" ng-click="add_community(community)" analytics-on="click" analytics-event="SearchResult">{{community}}</a></li>
+                <li role="presentation" ng-repeat="community in communities| filter:community_to_add">
+                  <a role="menuitem" tabindex="-1" ng-click="add_community(community)" analytics-on="click" analytics-event="SearchResult">{{community}}</a></li>
               </ul>
             </div>
           </div>
