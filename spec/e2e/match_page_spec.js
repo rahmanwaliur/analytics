@@ -125,7 +125,7 @@ describe('match page', function() {
       match_page.select_sector('CENTRE');
       match_page.click_button('Find');
 
-      ptor.sleep(5000);
+      ptor.sleep(10000);
 
       match_page.select_all();
       match_page.click_button('Compare');
