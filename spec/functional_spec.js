@@ -81,6 +81,17 @@ describe('match page', function() {
       match_page.select_family_type('retired');
       expect(match_page.selected_family_type()).toEqual('Retired');
     });
+
+    it('sets adults', function() {
+      match_page.select_family_type('adults');
+      expect(match_page.selected_family_type()).toEqual('Adults only');
+    });
+
+    it('sets adults with children', function() {
+      match_page.select_family_type('children');
+      expect(match_page.selected_family_type()).toEqual('Adults with Children');
+    });
+
   });
 
 
