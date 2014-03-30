@@ -4,7 +4,7 @@ describe('match page', function() {
 
     element(by.model('income')).$('option[value="15000"]').click();
 
-    expect(element(by.selectedOption('income')).getText()).toEqual('under $30,000')
+    expect(element(by.selectedOption('income')).getText()).toEqual('Less than $30,000')
   });
 
   it('sets income to 45000 when user selects 30-60K', function() {
@@ -28,7 +28,7 @@ describe('match page', function() {
 
     element(by.model('income')).$('option[value="105000"]').click();
 
-    expect(element(by.selectedOption('income')).getText()).toEqual('$90,000 - $110,000')
+    expect(element(by.selectedOption('income')).getText()).toEqual('$90,000 - $120,000')
   });
 
   it('sets income to 130000 when user selects over 120K', function() {
@@ -36,7 +36,7 @@ describe('match page', function() {
 
     element(by.model('income')).$('option[value="130000"]').click();
 
-    expect(element(by.selectedOption('income')).getText()).toEqual('Over $120,000')
+    expect(element(by.selectedOption('income')).getText()).toEqual('Above $120,000')
   });
 
 });
