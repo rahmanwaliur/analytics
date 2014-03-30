@@ -167,7 +167,7 @@
         <label>Preferred City Sectors</label>
         <div class="checkbox" ng-repeat="sector in sectors">
           <label>
-            <input type="checkbox" ng-model="sector.selected"> {{sector.name}}
+            <input type="checkbox" ng-model="sector.selected" class="sector" value="{{sector.name}}"> {{sector.name}}
           </label>
         </div>
       </div>
@@ -178,7 +178,7 @@
       <h2 >Top {{ranked_communities.length}} Matching Communities</h2>
 
       <form role="form" ng-submit="compare()">
-        <a ng-click="select_all()">Select All</a>
+        <a ng-click="select_all()" class="select-all">Select All</a>
 
         <div class="checkbox" ng-repeat="community in ranked_communities">
           <label>

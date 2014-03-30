@@ -1,3 +1,5 @@
+var ptor = protractor.getInstance();
+
 var MatchPage = (function(){
 
   var MatchPage = function(){
@@ -30,7 +32,17 @@ var MatchPage = (function(){
       return selected_option('family_type');
     };
 
+    this.select_sector = function(sector){
+      $('.sector[value="' + sector + '"]').click();
+    };
 
+    this.click_button = function(partial_text){
+      return element(by.partialButtonText(partial_text)).click();
+    };
+
+    this.select_all = function(){
+      $('.select-all').click();
+    };
 
   };
 
@@ -94,5 +106,18 @@ describe('match page', function() {
 
   });
 
+  describe('sector select', function(){
+    it('selects CENTER', function(){
+      match_page.select_sector('CENTRE');
+      match_page.click_button('Find');
+
+      ptor.sleep(3000);
+
+      match_page.select_all();
+      match_page.click_button('Compare');
+
+      expect(browser.getCurrentUrl()).toContain('#!/compare');
+    });
+  });
 
 });
