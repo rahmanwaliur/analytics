@@ -40,6 +40,14 @@ app.filter('join', function(){
 
 });
 
+app.filter('sanitize_name', function(){
+  return function(names){
+    return _.map(names, function(name){
+      return name.replace(/\//g, '_');
+    });
+  };
+});
+
 app.directive('facebook', function(){
   return {
     restrict: 'E',
@@ -256,7 +264,7 @@ app.directive('ownershipComparison', function(){
 
 
 
-app.controller('CompareController', function($scope, $rootScope, $route, $location, communities){
+app.controller('CompareController', function($scope, $rootScope, $route, $location, $filter, communities){
   $rootScope.tab = 'compare';
 
   $scope.communities = communities;
@@ -290,7 +298,8 @@ app.controller('CompareController', function($scope, $rootScope, $route, $locati
 
   var update = function(){
     $scope.communities_to_compare = _.uniq($scope.communities_to_compare);
-    $location.path( "/compare/" + $scope.communities_to_compare.sort());
+    var sorted_names = $filter('sanitize_name')($scope.communities_to_compare).sort()
+    $location.path( "/compare/" + sorted_names);
   }
 
   $scope.add_community = function(community){
@@ -334,9 +343,7 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
       return ranked_community.community_profile.name;
     });
 
-    var sanitized_names = _.map(communities_to_compare, function(community){
-      return community.replace(/\//g, '_');
-    });
+    var sanitized_names = $filter('sanitize_name')(communities_to_compare);
 
     $location.path( "/compare/" + sanitized_names.sort());
   };
