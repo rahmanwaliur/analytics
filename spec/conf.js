@@ -10,7 +10,7 @@ exports.config = {
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.
-  specs: ['match_page_spec.js'],
+  specs: ['match_page_spec.js', 'compare_page_spec.rb'],
 
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
