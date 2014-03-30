@@ -19,7 +19,7 @@ var CommunityProfile = (function() {
     return parseInt(this.data.employment_data[this.name]['' + year]['employment'], 10);
   }
 
-  __proto__.employment_precentage = function(year) {
+  __proto__.employment_percentage = function(year) {
     return this.employment(year) / this.population(year) * 100;
   }
 
