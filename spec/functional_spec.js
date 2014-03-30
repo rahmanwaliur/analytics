@@ -2,20 +2,37 @@ var MatchPage = (function(){
 
   var MatchPage = function(){
 
+    var select_option = function(model, value){
+      element(by.model(model)).$('option[value="' + value + '"]').click();
+    };
+
+    var selected_option = function(model, value){
+      return element(by.selectedOption(model)).getText();
+    };
+
     this.get = function(){
       browser.get('http://localhost:8000');
-    }
+    };
 
     this.selected_income = function(){
-      return element(by.selectedOption('income')).getText();
-    }
+      return selected_option('income');
+    };
 
     this.select_income = function(value){
-      element(by.model('income')).$('option[value="' + value + '"]').click();
-    }
+      select_option('income', value);
+    };
+
+    this.select_family_type = function(value){
+      select_option('family_type', value);
+    };
+
+    this.selected_family_type = function(value){
+      return selected_option('family_type');
+    };
+
+
 
   };
-
 
   return MatchPage;
 })();
@@ -57,6 +74,13 @@ describe('match page', function() {
       expect(match_page.selected_income()).toEqual('Above $120,000');
     });
 
+  });
+
+  describe('family select', function(){
+    it('sets retired', function() {
+      match_page.select_family_type('retired');
+      expect(match_page.selected_family_type()).toEqual('Retired');
+    });
   });
 
 
