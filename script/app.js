@@ -330,7 +330,6 @@ app.controller('MatchController', function($scope, $rootScope, $filter, $locatio
     $scope.button_text = 'Finding Communities..';
     $scope.user_profile = new UserProfile($scope);
     $scope.ranked_communities = $scope.user_profile.rankedCommunities(communities, 10);
-
   };
 
   $scope.select_community = function (community) {
