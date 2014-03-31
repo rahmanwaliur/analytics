@@ -292,10 +292,6 @@ app.controller('CompareController', function($scope, $rootScope, $route, $locati
     $scope.communities_to_compare = [];
   }
 
-  $scope.communitySelected = function(community){
-    return _.contains($scope.communities_to_compare, community);
-  }
-
   var update = function(){
     $scope.communities_to_compare = _.uniq($scope.communities_to_compare);
     var sorted_names = $filter('sanitize_name')($scope.communities_to_compare).sort()
