@@ -91,9 +91,7 @@ app.directive('map', function(){
 app.directive('ranks', function(){
   return{
     restrict: 'E',
-    templateUrl: 'ranks_comparison.html',
-    link: function(){
-    }
+    templateUrl: 'ranks_comparison.html'
   };
 });
 
