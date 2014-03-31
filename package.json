@@ -1,0 +1,23 @@
+{
+  "name": "analytics",
+  "version": "1.0.0",
+  "description": "Shows the communities of Calgary and allows people to compare them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/smsohan/analytics.git"
+  },
+  "keywords": [
+    "calgary",
+    "loveyyc",
+    "yyc"
+  ],
+  "author": "SM Sohan",
+  "license": "BSD",
+  "dependencies": {
+    "protractor": "~0.20.1"
+  }
+}
