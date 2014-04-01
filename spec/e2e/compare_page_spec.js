@@ -58,6 +58,7 @@ describe('Compare Page', function(){
       expect(pageText).toContain('INCOME');
       expect(pageText).toContain('OWNERS VS. RENTERS');
       expect(pageText).toContain('CRIME REPORTS');
+      expect(pageText).toContain('SUMMARY');
     });
   });
 
