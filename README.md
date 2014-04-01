@@ -1,5 +1,10 @@
-Run the e2e specs:
+```
+npm install
+webdriver-manager update
 
-Install/setup Protractor: https://github.com/angular/protractor
+ruby server.rb $2>1 &
+webdriver-manager start $2>1 &
+node_modules/.bin/protractor spec/e2e/conf.js
+```
 
-> protractor spec/e2e/conf.js
+Run e2e Test
