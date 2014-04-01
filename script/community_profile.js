@@ -127,19 +127,19 @@ var CommunityProfile = (function() {
   };
 
   __proto__._family_score = function(family_type){
-    if(!family_type) {return 100;}
+    if(!family_type) {return 0;}
 
     var ages = this.age_distribution_percentage();
     if(family_type == 'children'){
-      return 100 - Math.abs(35, ages.under_20);
+      return 100 - Math.abs(35 - ages.under_20);
     }
 
     if(family_type == 'adults'){
-      return 100 - Math.abs(80, ages.under_65);
+      return 100 - Math.abs(80 - ages.under_65);
     }
 
     if(family_type == 'retired'){
-      return 100 - Math.abs(30, ages.over_65);
+      return 100 - Math.abs(30 - ages.over_65);
     }
   };
 
