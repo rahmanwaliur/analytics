@@ -108,6 +108,13 @@ app.directive('dropdown', function(){
   }
 });
 
+app.directive('summary', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'summary.html'
+  }
+});
+
 app.directive('populationComparison', function(){
 
   return {

@@ -117,13 +117,13 @@ var CommunityProfile = (function() {
   __proto__._crimes_score = function(){
     if(!this.crimes(2013) || this.crimes(2013).year_2013 === 0) return 100;
 
-    var latestCrimes = this.crimes(2013).year_2013;
+    var latestCrimes = this.crimes(2013);
     var latestPopulation = this.population(2011);
 
     if(!latestCrimes) return 100;
 
     var crimesPerPerson = latestCrimes / latestPopulation;
-    return 100 - crimesPerPerson * 5;
+    return 100 - crimesPerPerson * 50;
   };
 
   __proto__._family_score = function(family_type){
@@ -173,6 +173,34 @@ var CommunityProfile = (function() {
 
   __proto__.avenue_rank = function(){
     return this.data.avenue_ranks[this.name];
+  };
+
+  __proto__.summary = function(){
+    var summary = [];
+
+    var population_growth_percent = this.population_growth() * 100 / this.population(2009);
+
+    if(population_growth_percent > 2.3) {
+      summary.push('Above average population growth');
+    }
+    else{
+      summary.push('Below average population growth');
+    }
+
+    if(this.income(2005) > 67238) {
+      summary.push('above average income');
+    }
+    else{
+      summary.push('below average income');
+    }
+
+    console.dir(this._crimes_score())
+
+    if(this._crimes_score() < 95) {
+      summary.push('high number of crime reports');
+    }
+
+    return summary;
   };
 
   return CommunityProfile;
