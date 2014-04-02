@@ -13,8 +13,8 @@ open spec/unit/index.html
 npm install
 webdriver-manager update
 
-ruby server.rb $2>1
-webdriver-manager start $2>1
+ruby server.rb
+webdriver-manager start
 
 node_modules/.bin/protractor spec/e2e/conf.js
 
