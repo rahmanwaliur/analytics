@@ -4,7 +4,7 @@
   "description": "Shows the communities of Calgary and allows people to compare them",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "license": "BSD",
   "dependencies": {
     "protractor": "~0.20.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.6.3"
   }
 }
