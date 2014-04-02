@@ -3,6 +3,12 @@ Live Site
 http://loveyyc.info
 
 
+Build Status
+============
+[![Build Status](https://travis-ci.org/smsohan/analytics.png)](https://travis-ci.org/smsohan/analytics)
+
+
+
 Setup
 =====
 
