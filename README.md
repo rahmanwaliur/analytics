@@ -8,9 +8,10 @@ Setup
 
 
 ```
-open spec/unit/index.html
-
 npm install
+
+grunt
+
 webdriver-manager update
 
 ruby server.rb

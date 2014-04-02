@@ -7,7 +7,8 @@ module.exports = function (grunt) {
         src: "script/**/*.js",
         options: {
           specs: "spec/unit/**/*.js",
-          vendor: ['vendor/angular.js', 'vendor/jquery-1.10.2.min.js', 'vendor/**/*.js']
+          vendor: ['vendor/angular.js', 'vendor/jquery-1.10.2.min.js', 'vendor/**/*.js'],
+          keepRunner: true
       }
     }
   })

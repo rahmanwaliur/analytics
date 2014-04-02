@@ -1,2 +1,4 @@
 data/pdf/*.pdf
 node_modules/
+.grunt
+_SpecRunner.html
