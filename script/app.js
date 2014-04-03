@@ -16,7 +16,7 @@ app.config(function($routeProvider, $locationProvider){
 });
 
 app.factory('communities', function(){
-  return _.keys(population_data);
+  return _.keys(population_data).sort();
 });
 
 app.factory('sectors', function(){
