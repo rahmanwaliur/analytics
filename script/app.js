@@ -16,7 +16,10 @@ app.config(function($routeProvider, $locationProvider){
 });
 
 app.factory('communities', function(){
-  return _.keys(population_data).sort();
+  var communities = _.filter(_.keys(window.population_data), function(name){
+    return name.match(/^[^0-9]/);
+  });
+  return communities.sort();
 });
 
 app.factory('sectors', function(){
