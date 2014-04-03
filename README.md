@@ -30,7 +30,8 @@ node_modules/.bin/protractor spec/e2e/conf.js
 Techonology Used
 ================
 
-* __AngularJS__ - Client side UI framework
+* __AngularJS__ - Client side JS framework
+* __Twitter Bootstrap__ - UI framework
 * __Jasmine__ - JavaScript Unit test framework
 * __NodeJS__ - Javascript dependency through npm + end to end test
 * __Protractor__ - End to end test framework for AngularJS
