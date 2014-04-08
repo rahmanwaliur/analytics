@@ -84,9 +84,9 @@ describe('Compare Page', function(){
       element.all(by.css('#matching_communities a')).then(function(matches) {
         expect(matches.length).toEqual(4);
         expect(matches[0].getText()).toEqual('BONAVISTA DOWNS');
-        expect(matches[1].getText()).toEqual('VISTA HEIGHTS');
-        expect(matches[2].getText()).toEqual('LAKE BONAVISTA');
-        expect(matches[3].getText()).toEqual('ROYAL VISTA');
+        expect(matches[1].getText()).toEqual('LAKE BONAVISTA');
+        expect(matches[2].getText()).toEqual('ROYAL VISTA');
+        expect(matches[3].getText()).toEqual('VISTA HEIGHTS');
       });
     });
   });
